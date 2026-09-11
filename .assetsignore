@@ -1,0 +1,9 @@
+wrangler.toml
+worker.js
+package.json
+package-lock.json
+.assetsignore
+CLAUDE.md
+*.md
+node_modules
+.wrangler

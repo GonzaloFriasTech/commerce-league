@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The Commerce League — El primer evento donde los comercios del marketplace bancario se encuentran, crecen y construyen comunidad." />
+    <title>The Commerce League</title>
+    <link rel="icon" type="image/png" href="assets/logos/logo-tcl-favicom.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="site-header" id="site-header">
+      <div class="container nav-container">
+
+        <a href="#" class="nav-logo" aria-label="The Commerce League">
+          <img src="assets/logos/logo-tcl.png" alt="The Commerce League" class="nav-logo__img" />
+        </a>
+
+        <nav class="main-nav" aria-label="Navegación principal">
+          <ul>
+            <li><a href="#agenda"    data-i18n="nav.agenda">Agenda</a></li>
+            <li><a href="#speakers"  data-i18n="nav.speakers">Speakers</a></li>
+            <li><a href="#sponsors"  data-i18n="nav.sponsors">Sponsors</a></li>
+            <li><a href="#registro"  data-i18n="nav.registro">Registro</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="lang-toggle" id="lang-toggle" aria-label="Cambiar idioma">
+            <span class="lang-toggle__opt" data-lang="es">ES</span>
+            <span class="lang-toggle__sep">|</span>
+            <span class="lang-toggle__opt" data-lang="en">EN</span>
+          </button>
+          <a href="#" class="btn btn-tour" data-i18n="nav.tour">
+            <span class="btn-tour__icon" aria-hidden="true">✦</span>
+            Tour
+          </a>
+          <a href="#" id="nav-cta-btn" class="btn btn-primary" data-i18n="nav.cta">Inscribirme</a>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+
+      <!-- Ticker strip -->
+      <div class="hero__ticker" aria-hidden="true">
+        <div class="ticker__track" id="ticker-track">
+          <span>avenidamas</span><span class="ticker__sep">■</span>
+          <span>Marketplace Bancario</span><span class="ticker__sep">■</span>
+          <span>The Commerce League S01</span><span class="ticker__sep">■</span>
+          <span>Networking &amp; Comunidad</span><span class="ticker__sep">■</span>
+          <span>Innovación Fintech</span><span class="ticker__sep">■</span>
+          <span>Acceso Gratuito</span><span class="ticker__sep">■</span>
+          <span>Cupos Limitados</span><span class="ticker__sep">■</span>
+        </div>
+      </div>
+
+      <!-- Main hero content -->
+      <div class="container hero__content">
+
+        <a
+          href="https://avenidamas.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hero__eyebrow fade-up"
+        >
+          <span class="eyebrow__dot" aria-hidden="true"></span>
+          <span data-i18n="hero.eyebrow">avenida+ presenta · Temporada 01</span>
+        </a>
+
+        <div class="hero__logo-band fade-up" style="--delay: 0.08s">
+          <img
+            src="assets/logos/logo-tcl.png"
+            alt="The Commerce League"
+            class="hero__logo"
+          />
+        </div>
+
+        <p class="hero__subtitle fade-up" style="--delay: 0.16s" data-i18n="hero.subtitle">
+          El primer evento donde los comercios del marketplace bancario se
+          <strong>encuentran, crecen y construyen comunidad</strong>.
+          Un día para conectar con quienes están moviendo el comercio digital en Argentina.
+        </p>
+
+        <div class="hero__ctas fade-up" style="--delay: 0.24s">
+          <a href="#registro" class="btn btn-primary" data-i18n="hero.cta1">Quiero mi lugar →</a>
+          <a href="#agenda"   class="btn btn-outline" data-i18n="hero.cta2">Ver agenda</a>
+        </div>
+
+        <div class="hero__metrics fade-up" style="--delay: 0.32s">
+          <div class="metric">
+            <span class="metric__num grad-text">50+</span>
+            <span class="metric__label" data-i18n="metric.comercios">Comercios</span>
+          </div>
+          <div class="metric metric--center">
+            <span class="metric__num grad-text">1</span>
+            <span class="metric__label" data-i18n="metric.dia">Día</span>
+          </div>
+          <div class="metric">
+            <span class="metric__num grad-text">FREE</span>
+            <span class="metric__label" data-i18n="metric.acceso">Acceso</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== AGENDA ===== -->
+    <section id="agenda" class="agenda">
+      <div class="agenda__bg" aria-hidden="true">
+        <div class="agenda__blob"></div>
+        <div class="agenda__blob agenda__blob--2"></div>
+      </div>
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-eyebrow grad-text" data-i18n="agenda.eyebrow">Programa del día</p>
+          <h2 class="section-title" data-i18n="agenda.title">Agenda</h2>
+        </div>
+
+        <ol class="timeline">
+
+          <!-- 09:00 Desayuno & Networking -->
+          <li class="timeline__item">
+            <div class="timeline__time">09:00</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="badge badge--networking" data-i18n="agenda.cat.networking">Networking</span>
+              <h3 class="timeline__title" data-i18n="agenda.item1.title">Desayuno &amp; Networking</h3>
+              <p class="timeline__desc" data-i18n="agenda.item1.desc">Bienvenida y los primeros cruces entre comercios.</p>
+            </div>
+          </li>
+
+          <!-- 10:00 Apertura -->
+          <li class="timeline__item">
+            <div class="timeline__time">10:00</div>
+            <div class="timeline__dot timeline__dot--grad"></div>
+            <div class="timeline__card timeline__card--featured">
+              <span class="timeline__speaker">Daniel Jejcic &amp; Pablo Pirán</span>
+              <span class="badge badge--keynote" data-i18n="agenda.cat.keynote">Keynote</span>
+              <h3 class="timeline__title" data-i18n="agenda.item2.title">Apertura: Palabras de bienvenida</h3>
+              <p class="timeline__desc" data-i18n="agenda.item2.desc">Apertura oficial de The Commerce League S01.</p>
+            </div>
+          </li>
+
+          <!-- 10:15 Comercio Agéntico -->
+          <li class="timeline__item">
+            <div class="timeline__time">10:15</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__speaker">Rafael Soto</span>
+              <span class="badge badge--panel" data-i18n="agenda.cat.panel">Panel</span>
+              <h3 class="timeline__title" data-i18n="agenda.item3.title">Comercio Agéntico Abierto</h3>
+              <p class="timeline__desc" data-i18n="agenda.item3.desc">MODO presenta su visión sobre el comercio agéntico y el futuro de los pagos digitales.</p>
+            </div>
+          </li>
+
+          <!-- 10:45 Hot Sale -->
+          <li class="timeline__item">
+            <div class="timeline__time">10:45</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__speaker">Eliana Velarde &amp; Ricardo Calderón</span>
+              <span class="badge badge--workshop" data-i18n="agenda.cat.workshop">Workshop</span>
+              <h3 class="timeline__title" data-i18n="agenda.item4.title">Estrategia Comercial: Las tiendas bancarias se preparan para Hot Sale</h3>
+              <p class="timeline__desc" data-i18n="agenda.item4.desc">Cómo prepararte para la temporada de mayor venta del año.</p>
+            </div>
+          </li>
+
+          <!-- 11:05 Panel cadena marketplaces -->
+          <li class="timeline__item">
+            <div class="timeline__time">11:05</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__speaker">Daniel Jejcic &amp; Pablo Pirán</span>
+              <span class="badge badge--panel" data-i18n="agenda.cat.panel">Panel</span>
+              <h3 class="timeline__title" data-i18n="agenda.item5.title">La importancia de la cadena de los marketplaces</h3>
+              <p class="timeline__desc" data-i18n="agenda.item5.desc">Análisis profundo del ecosistema y la cadena de valor de los marketplaces bancarios.</p>
+            </div>
+          </li>
+
+          <!-- 11:30 Marketing Automation -->
+          <li class="timeline__item">
+            <div class="timeline__time">11:30</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__speaker">Hernán Litvac</span>
+              <span class="badge badge--workshop" data-i18n="agenda.cat.workshop">Workshop</span>
+              <h3 class="timeline__title" data-i18n="agenda.item6.title">Redefiniendo el Marketing Automation con AI</h3>
+              <p class="timeline__desc" data-i18n="agenda.item6.desc">Cómo automatizar y escalar tu estrategia de marketing dentro del marketplace.</p>
+            </div>
+          </li>
+
+          <!-- 12:00 Panel marketplaces bancarios -->
+          <li class="timeline__item">
+            <div class="timeline__time">12:00</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__speaker">M. Picolla, P. Vidal, P. Cirino, M. Osorio<br>Mod. Daniel  Jejcic</span>
+              <span class="badge badge--panel" data-i18n="agenda.cat.panel">Panel</span>
+              <h3 class="timeline__title" data-i18n="agenda.item7.title">Marketplaces bancarios</h3>
+              <p class="timeline__desc" data-i18n="agenda.item7.desc">Expertos de tiendas bancarias comparten su visión y experiencia.</p>
+            </div>
+          </li>
+
+          <!-- 12:30 Panel logística -->
+          <li class="timeline__item">
+            <div class="timeline__time">12:30</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__speaker">C. Pirán, Y. Villalobos, J. Sanseau · Mod. P. Altamira</span>
+              <span class="badge badge--panel" data-i18n="agenda.cat.panel">Panel</span>
+              <h3 class="timeline__title" data-i18n="agenda.item8.title">Innovación logística para marketplaces bancarios</h3>
+              <p class="timeline__desc" data-i18n="agenda.item8.desc">Los referentes de logística del ecosistema comparten tendencias y soluciones.</p>
+            </div>
+          </li>
+
+          <!-- 13:00 Integradores -->
+          <li class="timeline__item">
+            <div class="timeline__time">13:00</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__speaker">Pablo Altamira</span>
+              <span class="badge badge--workshop" data-i18n="agenda.cat.workshop">Workshop</span>
+              <h3 class="timeline__title" data-i18n="agenda.item9.title">Conectando marketplaces: el rol de los integradores</h3>
+              <p class="timeline__desc" data-i18n="agenda.item9.desc">El papel clave de los integradores en el crecimiento del ecosistema bancario.</p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== SPEAKERS ===== -->
+    <section id="speakers" class="speakers">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-eyebrow grad-text" data-i18n="speakers.eyebrow">Los protagonistas</p>
+          <h2 class="section-title" data-i18n="speakers.title">Speakers</h2>
+          <p class="speakers__subtitle" data-i18n="speakers.subtitle">Reunimos al equipo de avenida+, referentes del ecosistema fintech y comercios con resultados reales.</p>
+          <div class="speakers__info-badges">
+            <span class="speakers__info-badge">🎤 <span data-i18n="speakers.badge1">11 speakers confirmados</span></span>
+            <span class="speakers__info-badge">⚡ <span data-i18n="speakers.badge2">Q&A abierto</span></span>
+            <span class="speakers__info-badge">🤝 <span data-i18n="speakers.badge3">Meet &amp; greet</span></span>
+          </div>
+        </div>
+
+        <div class="speakers-grid">
+
+          <!-- Speaker 1: Daniel Jejcic -->
+          <div class="speaker-card speaker-card--confirmed">
+            <a href="https://www.linkedin.com/in/danieljejcic/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Daniel Jejcic en LinkedIn"></a>
+            <div class="speaker__avatar-wrap">
+              <a href="https://avenidamas.com/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge" data-i18n="speakers.company">avenida+</a>
+              <img src="assets/images/speaker-dano.jpg" alt="Daniel Jejcic" class="speaker__photo" />
+            </div>
+            <div class="speaker__body">
+              <p class="speaker__name">Daniel Jejcic</p>
+              <p class="speaker__role" data-i18n="speakers.role1">CEO & Co-Founder</p>
+              <p class="speaker__company-label" data-i18n="speakers.company">avenida+</p>
+            </div>
+          </div>
+
+          <!-- Speaker 3: Rafael Soto -->
+          <div class="speaker-card speaker-card--confirmed">
+            <a href="https://www.linkedin.com/in/rafasoto/?skipRedirect=true" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Rafael Soto en LinkedIn"></a>
+            <div class="speaker__avatar-wrap">
+              <a href="https://www.modo.com.ar/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">MODO</a>
+              <img src="assets/images/foto-soto.jpg" alt="Rafael Soto" class="speaker__photo" />
+            </div>
+            <div class="speaker__body">
+              <p class="speaker__name">Rafael Soto</p>
+              <p class="speaker__role">CEO</p>
+              <p class="speaker__company-label">MODO</p>
+            </div>
+          </div>
+
+          <!-- Speaker 4: Eliana Velarde -->
+          <div class="speaker-card speaker-card--confirmed">
+            <a href="https://www.linkedin.com/in/eliana-velarde-41b7966b/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Eliana Velarde en LinkedIn"></a>
+            <div class="speaker__avatar-wrap">
+              <a href="https://avenidamas.com/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">avenida+</a>
+              <img src="assets/images/foto-velarde.jpeg?v=2" alt="Eliana Velarde" class="speaker__photo" />
+            </div>
+            <div class="speaker__body">
+              <p class="speaker__name">Eliana Velarde</p>
+              <p class="speaker__role">Commercial Leader</p>
+              <p class="speaker__company-label">avenida+</p>
+            </div>
+          </div>
+
+          <!-- Speaker 5: Pablo Pirán -->
+          <div class="speaker-card speaker-card--confirmed">
+            <a href="https://www.linkedin.com/in/pablo-pir%C3%A1n-443120151/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Pablo Pirán en LinkedIn"></a>
+            <div class="speaker__avatar-wrap">
+              <a href="https://www.southpost.com.ar/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">SouthPost</a>
+              <img src="assets/images/foto-piranp.jpg" alt="Pablo Pirán" class="speaker__photo" />
+            </div>
+            <div class="speaker__body">
+              <p class="speaker__name">Pablo Pirán</p>
+              <p class="speaker__role">Presidente</p>
+              <p class="speaker__company-label">South Post</p>
+            </div>
+          </div>
+
+          <!-- Speaker 6: Carlos Pirán -->
+          <div class="speaker-card speaker-card--confirmed">
+            <a href="https://www.linkedin.com/in/tati-piran/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Carlos Pirán en LinkedIn"></a>
+            <div class="speaker__avatar-wrap">
+              <a href="https://www.southpost.com.ar/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">SouthPost</a>
+              <img src="assets/images/foto-piranc.jpg?v=2" alt="Carlos Pirán" class="speaker__photo" />
+            </div>
+            <div class="speaker__body">
+              <p class="speaker__name">Carlos Pirán</p>
+              <p class="speaker__role">Director de Operaciones</p>
+              <p class="speaker__company-label">South Post</p>
+            </div>
+          </div>
+
+          <!-- Speaker 7: Ricardo Calderón -->
+          <div class="speaker-card speaker-card--confirmed">
+            <a href="https://www.linkedin.com/in/ricardo-calder%C3%B3n2/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Ricardo Calderón en LinkedIn"></a>
+            <div class="speaker__avatar-wrap">
+              <a href="https://avenidamas.com/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">avenida+</a>
+              <img src="assets/images/foto-calderon.jpg" alt="Ricardo Calderón" class="speaker__photo" />
+            </div>
+            <div class="speaker__body">
+              <p class="speaker__name">Ricardo Calderón</p>
+              <p class="speaker__role">Head of Operations</p>
+              <p class="speaker__company-label">avenida+</p>
+            </div>
+          </div>
+
+          <!-- Speaker 8: Pablo Altamira -->
+          <div class="speaker-card speaker-card--confirmed">
+            <a href="https://www.linkedin.com/in/pabloaltamira/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Pablo Altamira en LinkedIn"></a>
+            <div class="speaker__avatar-wrap">
+              <a href="https://www.producteca.com/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Producteca</a>
+              <img src="assets/images/foto-altamira.jpg" alt="Pablo Altamira" class="speaker__photo" />
+            </div>
+            <div class="speaker__body">
+              <p class="speaker__name">Pablo Altamira</p>
+              <p class="speaker__role">CRO</p>
+              <p class="speaker__company-label">Producteca</p>
+            </div>
+          </div>
+
+          <!-- Speaker 9: Hernán Litvac -->
+          <div class="speaker-card speaker-card--confirmed">
+            <a href="https://www.linkedin.com/in/hernanlitvac/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Hernán Litvac en LinkedIn"></a>
+            <div class="speaker__avatar-wrap">
+              <a href="https://icommkt.com/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Icomm</a>
+              <img src="assets/images/foto-litvac.jpg" alt="Hernán Litvac" class="speaker__photo" />
+            </div>
+            <div class="speaker__body">
+              <p class="speaker__name">Hernán Litvac</p>
+              <p class="speaker__role">Co-Founder</p>
+              <p class="speaker__company-label">Icomm</p>
+            </div>
+          </div>
+
+          <!-- Speaker 10: Yanileth Villalobos -->
+          <div class="speaker-card speaker-card--confirmed">
+            <a href="https://www.linkedin.com/in/yanileth-villalobos-valero-1191043a/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Yanileth Villalobos en LinkedIn"></a>
+            <div class="speaker__avatar-wrap">
+              <a href="https://hopenvios.com.ar/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Hop Envíos</a>
+              <img src="assets/images/foto-villalobos.jpg" alt="Yanileth Villalobos" class="speaker__photo" />
+            </div>
+            <div class="speaker__body">
+              <p class="speaker__name">Yanileth Villalobos</p>
+              <p class="speaker__role">Head Comercial</p>
+              <p class="speaker__company-label">Hop Envíos</p>
+            </div>
+          </div>
+
+          <!-- Speaker 11: Julian Sanseau -->
+          <div class="speaker-card speaker-card--confirmed">
+            <a href="https://www.linkedin.com/in/juliansanseau/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Julian Sanseau en LinkedIn"></a>
+            <div class="speaker__avatar-wrap">
+              <a href="https://pickit.com.ar/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Pickit</a>
+              <img src="assets/images/foto-sanseau.jpg" alt="Julian Sanseau" class="speaker__photo" />
+            </div>
+            <div class="speaker__body">
+              <p class="speaker__name">Julian Sanseau</p>
+              <p class="speaker__role">Head of Sales</p>
+              <p class="speaker__company-label">Pickit</p>
+            </div>
+          </div>
+
+          <!-- Speaker 12: Patricio Vidal -->
+          <div class="speaker-card speaker-card--confirmed">
+            <a href="https://www.linkedin.com/in/patricio-vidal-49109b10/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Patricio Vidal en LinkedIn"></a>
+            <div class="speaker__avatar-wrap">
+              <a href="https://www.nacionservicios.com.ar/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Nación Servicios</a>
+              <img src="assets/images/foto-vidal.jpeg" alt="Patricio Vidal" class="speaker__photo" />
+            </div>
+            <div class="speaker__body">
+              <p class="speaker__name">Patricio Vidal</p>
+              <p class="speaker__role">Líder de Negocios Corporativos</p>
+              <p class="speaker__company-label">Nación Servicios</p>
+            </div>
+          </div>
+
+          <!-- Speaker 13: Pablo Cirino -->
+          <div class="speaker-card speaker-card--confirmed">
+            <a href="https://www.linkedin.com/in/pablo-cirino-67705812/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Pablo Cirino en LinkedIn"></a>
+            <div class="speaker__avatar-wrap">
+              <a href="https://www.comafi.com.ar/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Banco Comafi</a>
+              <img src="assets/images/foto-cirino.jpg" alt="Pablo Cirino" class="speaker__photo" />
+            </div>
+            <div class="speaker__body">
+              <p class="speaker__name">Pablo Cirino</p>
+              <p class="speaker__role">Gerente de Portfolio Management, Promociones y Loyalty</p>
+              <p class="speaker__company-label">Banco Comafi</p>
+            </div>
+          </div>
+
+          <!-- Speaker 14: Magali Picolla -->
+          <div class="speaker-card speaker-card--confirmed">
+            <a href="https://www.linkedin.com/in/magali-picolla-830103b5/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Magali Picolla en LinkedIn"></a>
+            <div class="speaker__avatar-wrap">
+              <a href="https://macro.com.ar/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Banco Macro</a>
+              <img src="assets/images/foto-piccola.jpg" alt="Magali Picolla" class="speaker__photo" />
+            </div>
+            <div class="speaker__body">
+              <p class="speaker__name">Magali Picolla</p>
+              <p class="speaker__role">Loyalty - E-commerce | Team Leader</p>
+              <p class="speaker__company-label">Banco Macro</p>
+            </div>
+          </div>
+
+          <!-- Speaker 15: Matías Osorio -->
+          <div class="speaker-card speaker-card--confirmed">
+            <a href="https://www.linkedin.com/in/matiasosorio-mkt/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Matías Osorio en LinkedIn"></a>
+            <div class="speaker__avatar-wrap">
+              <a href="https://bancociudad.com.ar/institucional/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Banco Ciudad</a>
+              <img src="assets/images/foto-osorio.jpg" alt="Matías Osorio" class="speaker__photo" />
+            </div>
+            <div class="speaker__body">
+              <p class="speaker__name">Matías Osorio</p>
+              <p class="speaker__role">Analista de Negocio Adquirente</p>
+              <p class="speaker__company-label">Banco Ciudad</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SPONSORS ===== -->
+    <section id="sponsors" class="sponsors">
+      <div class="container">
+
+        <p class="sponsors__eyebrow grad-text" data-i18n="sponsors.eyebrow">Nos acompañan</p>
+        <h2 class="section-title sponsors__title" data-i18n="sponsors.title">Nuestros Partners</h2>
+
+        <!-- Nivel 1: avenida+ -->
+        <div class="sponsors__main">
+          <a href="https://avenidamas.com/" target="_blank" rel="noopener noreferrer" class="sponsor-main__link" aria-label="avenida+">
+            <img src="assets/logos/logo-avenida.png" alt="avenida+" class="sponsor-main__logo" />
+          </a>
+        </div>
+
+        <!-- Nivel 2: Southpost -->
+        <div class="sponsors__second">
+          <a href="https://www.southpost.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-second__link" aria-label="Southpost">
+            <img src="assets/logos/logo-southpost.png" alt="Southpost" class="sponsor-second__logo" />
+          </a>
+        </div>
+
+        <!-- Nivel 3: Ticker infinito — Workplace, Producteca, Hop, Icomm, Pickit, Tucan -->
+        <!-- 6 sets × 6 items = 36 items; animación mueve -33.33% (2 sets) → loop sin cortes -->
+        <div class="sponsors__secondary">
+          <div class="sponsors__ticker">
+            <div class="sponsors__track sponsors__track--loop">
+              <!-- Set 1 (real) -->
+              <a href="https://www.workplaceirsa.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-label="Workplace"><img src="assets/logos/logo-workplace.svg" alt="Workplace" class="sponsor-item__logo" /></a>
+              <a href="https://www.producteca.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-label="Producteca"><img src="assets/logos/logo-producteca.png" alt="Producteca" class="sponsor-item__logo" /></a>
+              <a href="https://hopenvios.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-label="Hop Envíos"><img src="assets/logos/logo-hop.png" alt="Hop Envíos" class="sponsor-item__logo" /></a>
+              <a href="https://icommkt.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-label="Icomm"><img src="assets/logos/logo_icomm.webp" alt="Icomm" class="sponsor-item__logo" /></a>
+              <a href="https://pickit.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-label="Pickit"><img src="assets/logos/logo-pickit.png" alt="Pickit" class="sponsor-item__logo" /></a>
+              <a href="https://tucan.la" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-label="Tucan"><img src="assets/logos/logo-tucan.png" alt="Tucan" class="sponsor-item__logo" /></a>
+              <!-- Set 2 -->
+              <a href="https://www.workplaceirsa.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-workplace.svg" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://www.producteca.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-producteca.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://hopenvios.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-hop.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://icommkt.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo_icomm.webp" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://pickit.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-pickit.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://tucan.la" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-tucan.png" alt="" class="sponsor-item__logo" /></a>
+              <!-- Set 3 -->
+              <a href="https://www.workplaceirsa.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-workplace.svg" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://www.producteca.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-producteca.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://hopenvios.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-hop.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://icommkt.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo_icomm.webp" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://pickit.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-pickit.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://tucan.la" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-tucan.png" alt="" class="sponsor-item__logo" /></a>
+              <!-- Set 4 -->
+              <a href="https://www.workplaceirsa.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-workplace.svg" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://www.producteca.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-producteca.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://hopenvios.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-hop.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://icommkt.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo_icomm.webp" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://pickit.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-pickit.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://tucan.la" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-tucan.png" alt="" class="sponsor-item__logo" /></a>
+              <!-- Set 5 -->
+              <a href="https://www.workplaceirsa.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-workplace.svg" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://www.producteca.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-producteca.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://hopenvios.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-hop.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://icommkt.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo_icomm.webp" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://pickit.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-pickit.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://tucan.la" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-tucan.png" alt="" class="sponsor-item__logo" /></a>
+              <!-- Set 6 -->
+              <a href="https://www.workplaceirsa.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-workplace.svg" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://www.producteca.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-producteca.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://hopenvios.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-hop.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://icommkt.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo_icomm.webp" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://pickit.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-pickit.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://tucan.la" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-tucan.png" alt="" class="sponsor-item__logo" /></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== REGISTRO ===== -->
+    <section id="registro" class="registro">
+      <div class="container registro__inner">
+
+        <!-- Columna izquierda: copy + beneficios -->
+        <div class="registro__copy fade-up">
+          <p class="section-eyebrow grad-text" data-i18n="reg.eyebrow">Temporada 01</p>
+          <h2 class="section-title" data-i18n="reg.title">Asegurá tu lugar en la Liga</h2>
+          <p class="registro__subtitle" data-i18n="reg.subtitle">Acceso gratuito · Cupos limitados</p>
+          <ul class="registro__benefits">
+            <li class="benefit"><span class="benefit__check" aria-hidden="true">✓</span><span data-i18n="reg.b1">Acceso completo al evento (full day)</span></li>
+            <li class="benefit"><span class="benefit__check" aria-hidden="true">✓</span><span data-i18n="reg.b2">Desayuno y cocktail de cierre incluidos</span></li>
+            <li class="benefit"><span class="benefit__check" aria-hidden="true">✓</span><span data-i18n="reg.b3">Materiales exclusivos de Liga S01</span></li>
+            <li class="benefit"><span class="benefit__check" aria-hidden="true">✓</span><span data-i18n="reg.b4">Acceso anticipado a anuncios de producto</span></li>
+            <li class="benefit"><span class="benefit__check" aria-hidden="true">✓</span><span data-i18n="reg.b5">Meet &amp; greet con el equipo avenida+</span></li>
+          </ul>
+        </div>
+
+        <!-- Columna derecha: CTA Eventbrite -->
+        <div class="registro__form-wrap fade-up" style="--delay: 0.1s">
+          <div class="registro__cta">
+            <span class="registro__cta-icon grad-text" aria-hidden="true">✦</span>
+            <p class="registro__cta-headline" data-i18n="reg.cta.headline">Cupos limitados — ¡reservá el tuyo!</p>
+            <a href="#" id="reg-cta-btn" class="btn btn-primary registro__cta-btn" data-i18n="reg.cta">
+              Registrarme en Eventbrite →
+            </a>
+            <p class="registro__cta-note" data-i18n="reg.cta.note">
+              Serás redirigido a Eventbrite, nuestra plataforma oficial de registro
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== FOOTER (placeholder) ===== -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 The Commerce League. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- ===== CHATBOT FAQ ===== -->
+    <div id="chatbot" class="chatbot" role="complementary">
+
+      <!-- Burbuja toggle -->
+      <button class="chatbot__toggle" id="chatbot-toggle" aria-label="Abrir chat">
+        <svg class="chatbot__toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+        <svg class="chatbot__toggle-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <!-- Panel -->
+      <div class="chatbot__panel" id="chatbot-panel" aria-hidden="true">
+
+        <!-- Header -->
+        <div class="chatbot__header">
+          <div class="chatbot__header-info">
+            <span class="chatbot__avatar" aria-hidden="true">✦</span>
+            <div>
+              <p class="chatbot__name" data-i18n="chat.name">Commerce League</p>
+              <p class="chatbot__status" data-i18n="chat.status">Online</p>
+            </div>
+          </div>
+          <button class="chatbot__close" id="chatbot-close" aria-label="Cerrar chat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mensajes (JS dinámico) -->
+        <div class="chatbot__messages" id="chatbot-messages"></div>
+
+        <!-- Botones de acción (JS dinámico) -->
+        <div class="chatbot__actions" id="chatbot-actions"></div>
+
+      </div>
+    </div>
+
+    <!-- ===== SEASON 02 MODAL ===== -->
+    <div id="s2-modal-overlay" class="s2-modal-overlay" hidden>
+      <div class="s2-modal" role="dialog" aria-modal="true" aria-labelledby="s2-modal-title">
+        <button class="s2-modal__close" id="s2-modal-close" aria-label="Cerrar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+
+        <span class="s2-modal__badge" data-i18n="s2.badge">COMING SOON · TEMPORADA 02</span>
+
+        <img src="assets/logos/logo-tcl.png" alt="The Commerce League" class="s2-modal__logo" />
+
+        <h2 class="s2-modal__title" id="s2-modal-title" data-i18n="s2.title">Se viene la Temporada 02</h2>
+        <p class="s2-modal__subtitle" data-i18n="s2.subtitle">Estamos preparando algo aún más grande</p>
+
+        <ul class="s2-modal__info">
+          <li><span class="s2-modal__info-icon" aria-hidden="true">📅</span><span data-i18n="s2.date">28 de septiembre de 2026</span></li>
+          <li><span class="s2-modal__info-icon" aria-hidden="true">🕐</span><span data-i18n="s2.time">14:00 a 18:00 hs</span></li>
+          <li><span class="s2-modal__info-icon" aria-hidden="true">📍</span><span data-i18n="s2.place">Workplace by IRSA — Vedia 3892, CABA</span></li>
+        </ul>
+
+        <a href="#registro" class="s2-modal__cta" id="s2-modal-cta" data-i18n="s2.cta">Inscribirme →</a>
+        <p class="s2-modal__note" data-i18n="s2.note">¡Los cupos son limitados!</p>
+      </div>
+    </div>
+
+    <!-- ===== TOUR ===== -->
+    <div id="tour-overlay" class="tour-overlay" hidden></div>
+
+    <div id="tour-card" class="tour-card" hidden aria-live="polite">
+      <div class="tour-card__header">
+        <span class="tour-card__progress" id="tour-progress">Paso 1 de 6</span>
+        <button class="tour-card__exit" id="tour-exit">Salir del Tour</button>
+      </div>
+      <p class="tour-card__text" id="tour-text"></p>
+      <div class="tour-card__footer">
+        <div class="tour-card__dots" id="tour-dots"></div>
+        <button class="tour-card__next" id="tour-next">Siguiente →</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
