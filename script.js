@@ -661,16 +661,13 @@ function initChatbot() {
     botWithDelay(t('chat.a.q1'), backBtn);
   }
   function answerQ2() {
-    const urls = {
-      es: 'https://www.eventbrite.com.ar/e/1987362221904?aff=oddtdtcreator',
-      en: 'https://www.eventbrite.com.ar/e/the-commerce-league-tickets-1987362221904?aff=oddtdtcreator&keep_tld=true',
-    };
+    const eventbriteUrl = 'https://www.eventbrite.com.ar/e/the-commerce-league-2da-edicion-tickets-2000522374274';
     appendUserMsg(t('chat.menu.q2'));
     clearActions();
     const typing = showTyping();
     setTimeout(() => {
       typing.remove();
-      appendBotMsgWithLink(t('chat.a.q2'), t('chat.a.q2.link'), urls[currentLang] || urls.es);
+      appendBotMsgWithLink(t('chat.a.q2'), t('chat.a.q2.link'), eventbriteUrl);
       backBtn();
     }, 1000);
   }
@@ -754,25 +751,10 @@ function initSeasonModal() {
 }
 
 // ============================================================
-// Registro CTA — Eventbrite redirect (language-aware)
+// Registro CTA — reg-cta-btn, nav-cta-btn and the S02 modal CTA all
+// link directly to the Season 02 Eventbrite page via href/target — no
+// JS redirect needed.
 // ============================================================
-function initRegistroCTA() {
-  const urls = {
-    es: 'https://www.eventbrite.com.ar/e/1987362221904?aff=oddtdtcreator',
-    en: 'https://www.eventbrite.com.ar/e/the-commerce-league-tickets-1987362221904?aff=oddtdtcreator&keep_tld=true',
-  };
-
-  function openEventbrite(e) {
-    e.preventDefault();
-    window.open(urls[currentLang] || urls.es, '_blank', 'noopener,noreferrer');
-  }
-
-  const regBtn = $('#reg-cta-btn');
-  if (regBtn) regBtn.addEventListener('click', openEventbrite);
-
-  const navBtn = $('#nav-cta-btn');
-  if (navBtn) navBtn.addEventListener('click', openEventbrite);
-}
 
 // ============================================================
 // Boot
@@ -784,7 +766,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initTicker();
   initScrollSpy();
   initFadeUp();
-  initRegistroCTA();
   initChatbot();
   initTour();
   initSeasonModal();
