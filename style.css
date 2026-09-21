@@ -882,6 +882,22 @@ a.sponsor-item:hover {
   color: var(--color-text-muted);
 }
 
+/* TBD sponsor placeholder (S02 — not-yet-confirmed slots) */
+.sponsor-item--placeholder {
+  height: 36px;
+  padding-inline: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--color-border-2);
+  border-radius: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-text-dim);
+  white-space: nowrap;
+}
+
 /* Mobile */
 @media (max-width: 640px) {
   .sponsor-main__logo {
@@ -1823,4 +1839,63 @@ a.sponsor-item:hover {
   .s2-modal__title {
     font-size: 1.35rem;
   }
+}
+
+/* ============================================================
+   S01 → S02 announcement banner (s01.html only)
+   .site-header is position:fixed/top:0 with an opaque background, so
+   the banner must also be fixed (above it, higher z-index) and push
+   the header + hero down by its own height — plain document flow
+   would just get covered by the header.
+   ============================================================ */
+:root {
+  --s01-banner-h: 40px;
+}
+
+.s01-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 201;
+  height: var(--s01-banner-h);
+  background: rgba(255, 107, 53, 0.16);
+  border-bottom: 1px solid rgba(255, 107, 53, 0.3);
+  color: var(--color-text);
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding-inline: var(--space-lg);
+  transition: background var(--t-fast);
+}
+.s01-banner:hover {
+  background: rgba(255, 107, 53, 0.24);
+  opacity: 1;
+}
+
+.has-s01-banner .site-header {
+  top: var(--s01-banner-h);
+}
+.has-s01-banner .hero {
+  padding-top: calc(var(--nav-height) + var(--s01-banner-h));
+}
+
+@media (max-width: 480px) {
+  :root {
+    --s01-banner-h: 34px;
+  }
+  .s01-banner {
+    font-size: 0.68rem;
+  }
+}
+
+/* ============================================================
+   Hero confirmed-info block (index.html S02 landing)
+   ============================================================ */
+.hero__info {
+  max-width: 460px;
+  margin-inline: auto;
 }
