@@ -823,6 +823,158 @@ function initSeasonModal() {
 // ============================================================
 
 // ============================================================
+// Hero particles — floating light dots on #hero-particles (S02 hero
+// only; script.js is shared with s01.html, which has no canvas).
+// ============================================================
+function initHeroParticles() {
+  const canvas = $('#hero-particles');
+  // Measure .hero__content, not #hero: the canvas now lives inside it
+  // (same stacking context as the logo/text) so it can paint above the
+  // logo but below the text/buttons — see .hero__particles in style.css.
+  const heroContent = $('.hero__content');
+  if (!canvas || !heroContent) return;
+
+  const ctx = canvas.getContext('2d');
+  const COLORS = ['#FF6B35', '#FF8C00', '#FFF0E0'];
+  const PARTICLE_COUNT = 90;
+  const reduceMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let width = 0;
+  let height = 0;
+  let particles = [];
+  let rafId = null;
+  let resizeTimeout = null;
+
+  function randomBetween(min, max) {
+    return min + Math.random() * (max - min);
+  }
+
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+  }
+
+  function resize() {
+    // Width comes from the viewport, not .hero__content's rect — the
+    // canvas breaks out of the container (see .hero__particles CSS,
+    // left:50%/translateX(-50%)/width:100vw) so it spans edge to edge
+    // instead of being clipped to the container's max-width.
+    const rect = heroContent.getBoundingClientRect();
+    width = window.innerWidth;
+    height = rect.height;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function createParticles() {
+    particles = [];
+    // Stratified Y: split the height into one band per particle and
+    // drop each particle at a jittered position inside its own band.
+    // Guarantees even top-to-bottom coverage regardless of how tall
+    // .hero__content turns out to be — plain Math.random() can clump
+    // particles by chance, especially if it runs before web fonts
+    // finish loading and the hero's real height settles.
+    const band = height / PARTICLE_COUNT;
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      const speed = randomBetween(0.2, 0.5);
+      const angle = Math.random() * Math.PI * 2;
+      const baseOpacity = randomBetween(0.2, 0.8);
+      particles.push({
+        x: Math.random() * width,
+        y: band * i + Math.random() * band,
+        r: randomBetween(1, 3),
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+        baseOpacity,
+        opacity: baseOpacity,
+        isPulsing: Math.random() < 0.25, // ~20-30% of particles
+        pulsePhase: Math.random() * Math.PI * 2,
+        pulseSpeed: randomBetween(0.01, 0.02),
+      });
+    }
+  }
+
+  function update() {
+    for (const p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x - p.r < 0 || p.x + p.r > width) {
+        p.vx *= -1;
+        p.x = clamp(p.x, p.r, width - p.r);
+      }
+      if (p.y - p.r < 0 || p.y + p.r > height) {
+        p.vy *= -1;
+        p.y = clamp(p.y, p.r, height - p.r);
+      }
+
+      if (p.isPulsing) {
+        p.pulsePhase += p.pulseSpeed;
+        p.opacity = clamp(p.baseOpacity + Math.sin(p.pulsePhase) * 0.25, 0.05, 0.9);
+      }
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+    for (const p of particles) {
+      ctx.globalAlpha = p.opacity;
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function loop() {
+    update();
+    draw();
+    rafId = requestAnimationFrame(loop);
+  }
+
+  resize();
+  createParticles();
+
+  if (reduceMotion) {
+    draw();
+  } else {
+    loop();
+  }
+
+  // Web fonts (Montserrat) load async; if line-wrapping changes after
+  // they land, .hero__content's real height can differ from what we
+  // measured at DOMContentLoaded. Re-measure and reseed once fonts are
+  // actually ready so particles stay spread across the true height.
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => {
+      resize();
+      createParticles();
+      if (reduceMotion) draw();
+    });
+  }
+
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      if (rafId) cancelAnimationFrame(rafId);
+      resize();
+      createParticles();
+      if (reduceMotion) {
+        draw();
+      } else {
+        loop();
+      }
+    }, 150);
+  });
+}
+
+// ============================================================
 // Boot
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -835,4 +987,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initChatbot();
   initTour();
   initSeasonModal();
+  initHeroParticles();
 });

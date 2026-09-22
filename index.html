@@ -65,11 +65,16 @@
       <!-- Main hero content -->
       <div class="container hero__content">
 
+        <!-- Floating particles: same stacking context as the content below,
+             so it paints above .hero__logo-band (unpositioned) but under
+             every .hero__above-particles element (explicit higher z-index). -->
+        <canvas id="hero-particles" class="hero__particles" aria-hidden="true"></canvas>
+
         <a
           href="https://avenidamas.com/"
           target="_blank"
           rel="noopener noreferrer"
-          class="hero__eyebrow fade-up"
+          class="hero__eyebrow hero__above-particles fade-up"
         >
           <span class="eyebrow__dot" aria-hidden="true"></span>
           <span data-i18n="s02.hero.eyebrow">avenida+ presenta · Temporada 02</span>
@@ -83,24 +88,24 @@
           />
         </div>
 
-        <p class="hero__subtitle fade-up" style="--delay: 0.16s" data-i18n="hero.subtitle">
+        <p class="hero__subtitle hero__above-particles fade-up" style="--delay: 0.16s" data-i18n="hero.subtitle">
           El primer evento donde los comercios del marketplace bancario se
           <strong>encuentran, crecen y construyen comunidad</strong>.
           Un día para conectar con quienes están moviendo el comercio digital en Argentina.
         </p>
 
-        <ul class="hero__info s2-modal__info fade-up" style="--delay: 0.2s">
+        <ul class="hero__info hero__above-particles s2-modal__info fade-up" style="--delay: 0.2s">
           <li><span class="s2-modal__info-icon" aria-hidden="true">📅</span><span data-i18n="s2.date">28 de septiembre de 2026</span></li>
           <li><span class="s2-modal__info-icon" aria-hidden="true">🕐</span><span data-i18n="s2.time">14:00 a 18:00 hs</span></li>
           <li><span class="s2-modal__info-icon" aria-hidden="true">📍</span><span data-i18n="s2.place">Workplace by IRSA — Vedia 3892, CABA</span></li>
         </ul>
 
-        <div class="hero__ctas fade-up" style="--delay: 0.24s">
+        <div class="hero__ctas hero__above-particles fade-up" style="--delay: 0.24s">
           <a href="#registro" class="btn btn-primary" data-i18n="hero.cta1">Quiero mi lugar →</a>
           <a href="#agenda"   class="btn btn-outline" data-i18n="hero.cta2">Ver agenda</a>
         </div>
 
-        <div class="hero__metrics fade-up" style="--delay: 0.32s">
+        <div class="hero__metrics hero__above-particles fade-up" style="--delay: 0.32s">
           <div class="metric">
             <span class="metric__num grad-text">50+</span>
             <span class="metric__label" data-i18n="metric.comercios">Comercios</span>
@@ -533,7 +538,7 @@
               <a href="https://www.cabify.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-label="Cabify"><img src="assets/logos/logo-cabify.png" alt="Cabify" class="sponsor-item__logo" /></a>
               <a href="https://www.andreani.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-label="Andreani"><img src="assets/logos/logo-andreani.png" alt="Andreani" class="sponsor-item__logo" /></a>
               <a href="https://www.andesmar.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-label="Andesmar"><img src="assets/logos/logo-andesmar.png" alt="Andesmar" class="sponsor-item__logo" /></a>
-              <a href="https://www.urbanoexpress.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-label="Urbano"><img src="assets/logos/logo-urbano.png" alt="Urbano" class="sponsor-item__logo" /></a>
+              <a href="https://www.urbanoexpress.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-label="Urbano"><img src="assets/logos/logo-urbano.png" alt="Urbano" class="sponsor-item__logo sponsor-item__logo--urbano" /></a>
               <a href="https://www.enviopack.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-label="Envío Pack"><img src="assets/logos/logo-enviopack.png" alt="Envío Pack" class="sponsor-item__logo" /></a>
               <a href="https://www.zipnova.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-label="Zipnova"><img src="assets/logos/logo-zipnova.png" alt="Zipnova" class="sponsor-item__logo" /></a>
               <!-- Set 2 -->
@@ -545,7 +550,7 @@
               <a href="https://www.cabify.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-cabify.png" alt="" class="sponsor-item__logo" /></a>
               <a href="https://www.andreani.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-andreani.png" alt="" class="sponsor-item__logo" /></a>
               <a href="https://www.andesmar.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-andesmar.png" alt="" class="sponsor-item__logo" /></a>
-              <a href="https://www.urbanoexpress.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-urbano.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://www.urbanoexpress.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-urbano.png" alt="" class="sponsor-item__logo sponsor-item__logo--urbano" /></a>
               <a href="https://www.enviopack.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-enviopack.png" alt="" class="sponsor-item__logo" /></a>
               <a href="https://www.zipnova.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-zipnova.png" alt="" class="sponsor-item__logo" /></a>
               <!-- Set 3 -->
@@ -557,7 +562,7 @@
               <a href="https://www.cabify.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-cabify.png" alt="" class="sponsor-item__logo" /></a>
               <a href="https://www.andreani.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-andreani.png" alt="" class="sponsor-item__logo" /></a>
               <a href="https://www.andesmar.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-andesmar.png" alt="" class="sponsor-item__logo" /></a>
-              <a href="https://www.urbanoexpress.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-urbano.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://www.urbanoexpress.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-urbano.png" alt="" class="sponsor-item__logo sponsor-item__logo--urbano" /></a>
               <a href="https://www.enviopack.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-enviopack.png" alt="" class="sponsor-item__logo" /></a>
               <a href="https://www.zipnova.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-zipnova.png" alt="" class="sponsor-item__logo" /></a>
               <!-- Set 4 -->
@@ -569,7 +574,7 @@
               <a href="https://www.cabify.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-cabify.png" alt="" class="sponsor-item__logo" /></a>
               <a href="https://www.andreani.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-andreani.png" alt="" class="sponsor-item__logo" /></a>
               <a href="https://www.andesmar.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-andesmar.png" alt="" class="sponsor-item__logo" /></a>
-              <a href="https://www.urbanoexpress.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-urbano.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://www.urbanoexpress.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-urbano.png" alt="" class="sponsor-item__logo sponsor-item__logo--urbano" /></a>
               <a href="https://www.enviopack.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-enviopack.png" alt="" class="sponsor-item__logo" /></a>
               <a href="https://www.zipnova.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-zipnova.png" alt="" class="sponsor-item__logo" /></a>
               <!-- Set 5 -->
@@ -581,7 +586,7 @@
               <a href="https://www.cabify.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-cabify.png" alt="" class="sponsor-item__logo" /></a>
               <a href="https://www.andreani.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-andreani.png" alt="" class="sponsor-item__logo" /></a>
               <a href="https://www.andesmar.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-andesmar.png" alt="" class="sponsor-item__logo" /></a>
-              <a href="https://www.urbanoexpress.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-urbano.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://www.urbanoexpress.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-urbano.png" alt="" class="sponsor-item__logo sponsor-item__logo--urbano" /></a>
               <a href="https://www.enviopack.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-enviopack.png" alt="" class="sponsor-item__logo" /></a>
               <a href="https://www.zipnova.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-zipnova.png" alt="" class="sponsor-item__logo" /></a>
               <!-- Set 6 -->
@@ -593,7 +598,7 @@
               <a href="https://www.cabify.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-cabify.png" alt="" class="sponsor-item__logo" /></a>
               <a href="https://www.andreani.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-andreani.png" alt="" class="sponsor-item__logo" /></a>
               <a href="https://www.andesmar.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-andesmar.png" alt="" class="sponsor-item__logo" /></a>
-              <a href="https://www.urbanoexpress.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-urbano.png" alt="" class="sponsor-item__logo" /></a>
+              <a href="https://www.urbanoexpress.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-urbano.png" alt="" class="sponsor-item__logo sponsor-item__logo--urbano" /></a>
               <a href="https://www.enviopack.com/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-enviopack.png" alt="" class="sponsor-item__logo" /></a>
               <a href="https://www.zipnova.com.ar/" target="_blank" rel="noopener noreferrer" class="sponsor-item" aria-hidden="true" tabindex="-1"><img src="assets/logos/logo-zipnova.png" alt="" class="sponsor-item__logo" /></a>
             </div>

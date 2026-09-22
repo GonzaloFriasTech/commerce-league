@@ -313,6 +313,38 @@ a:hover { opacity: 0.75; }
   padding-top: var(--nav-height);
 }
 
+/* ============================================================
+   Hero particles — floating light dots (S02 hero only), drawn on
+   #hero-particles via Canvas in script.js (initHeroParticles()).
+   Lives INSIDE .hero__content (same stacking context as the logo
+   and text) so its z-index can sit between them:
+     .hero__logo-band  → unpositioned (implicit bottom layer)
+     .hero__particles  → z-index: 1  (paints over the logo)
+     .hero__above-particles elements → z-index: 2 (paints over particles)
+   All of this is still well below the fixed navbar (z-index:200).
+   ============================================================ */
+.hero__particles {
+  /* .hero__content is a `.container` (max-width + inline padding), so a
+     plain inset:0/width:100% would clip the canvas to that narrower box.
+     Break out to full viewport width regardless of the parent's max-width. */
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Everything in the hero except the logo should stay legible above
+   the particle canvas — eyebrow badge, subtitle, info list, CTAs,
+   metrics. */
+.hero__above-particles {
+  position: relative;
+  z-index: 2;
+}
+
 /* Ticker */
 .hero__ticker {
   width: 100%;
@@ -872,6 +904,13 @@ a.sponsor-item:hover {
   max-width: 140px;
   object-fit: contain;
   mix-blend-mode: screen;
+}
+
+/* Urbano logo has extra internal padding in the source file —
+   nudge it up slightly so it optically aligns with the other
+   ticker logos. */
+.sponsor-item__logo--urbano {
+  transform: translateY(-8px);
 }
 
 /* Text placeholder (Hop Envíos) */
