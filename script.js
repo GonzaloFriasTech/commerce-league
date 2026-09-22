@@ -158,30 +158,33 @@ const i18n = {
     's02.reg.eyebrow':         'Temporada 02',
     's02.reg.b2':              'Coffee break y cocktail de cierre incluidos',
     's02.reg.b3':              'Materiales exclusivos de Liga S02',
-    's02.speakers.badge1':     '14 speakers confirmados',
+    's02.speakers.badge1':     '13 speakers confirmados',
     's02.tbd':                 'A confirmar',
     's02.agenda.item1.title':  'Café | Networking',
     's02.agenda.item1.desc':   'Bienvenida y los primeros cruces entre asistentes.',
     's02.agenda.item2.title':  'Apertura | Palabras de bienvenida',
     's02.agenda.item2.desc':   'Apertura oficial de The Commerce League S02.',
-    's02.agenda.item3.title':  'Marketplaces bancarios',
-    's02.agenda.item3.desc':   'Expertos de tiendas bancarias comparten su visión y experiencia.',
-    's02.agenda.item4.title':  'Llegar a todo el país y cumplir la promesa',
-    's02.agenda.item4.desc':   'De la promesa de entrega a la puerta del cliente.',
-    's02.agenda.item5.title':  'Same Day, Next Day: cuando la logística se convierte en parte de la decisión de compra',
+    's02.agenda.item3.title':  'Panel 1 — De la promesa de entrega a la puerta del cliente',
+    's02.agenda.item3.desc':   'Llegar a todo el país y cumplir la promesa.',
+    's02.agenda.item4.title':  'Marketplaces bancarios',
+    's02.agenda.item4.desc':   'Expertos de tiendas bancarias comparten su visión y experiencia.',
+    's02.agenda.item5.title':  'Panel 2 — Same Day, Next Day: cuando la logística se convierte en parte de la decisión de compra',
     's02.agenda.item5.desc':   'La velocidad también es experiencia.',
     's02.agenda.item6.title':  'Break',
     's02.agenda.item6.desc':   'Pausa.',
-    's02.agenda.item7.title':  'Una integración, múltiples alternativas logísticas',
-    's02.agenda.item7.desc':   'Escalar sin perder el control.',
-    's02.agenda.item8.title':  'Más opciones de entrega, mejor experiencia',
+    's02.agenda.item7.title':  'Semillero Digital',
+    's02.agenda.item7.desc':   'Una iniciativa para potenciar el ecosistema digital.',
+    's02.agenda.item8.title':  'Panel 3 — Más opciones de entrega, mejor experiencia',
     's02.agenda.item8.desc':   'El cliente elige dónde recibir.',
     's02.agenda.item9.title':  'Estrategia Comercial | Las tiendas bancarias se preparan para Cyber Monday',
     's02.agenda.item9.desc':   'Cómo prepararte para uno de los eventos más grandes del año.',
-    's02.agenda.item10.title': 'Palabras de Cierre',
-    's02.agenda.item10.desc':  'Cierre oficial de The Commerce League S02.',
+    's02.agenda.item10.title': 'Panel 4 — Una integración, múltiples alternativas logísticas',
+    's02.agenda.item10.desc':  'Escalar sin perder el control.',
+    's02.agenda.item11.title': 'Palabras de Cierre',
+    's02.agenda.item11.desc':  'Cierre oficial de The Commerce League S02.',
     's02.sponsor.placeholder': 'Sponsor a confirmar',
     's02.footer.viewS01':      'Ver Temporada 01 →',
+    's02.map.tagline':         'Descubrí cómo la logística mueve Argentina',
 
     // Season 01 page (s01.html) — announcement banner pointing to S02
     's01.banner.viewS02':      '🎉 Se viene la Temporada 02 — Ver detalles →',
@@ -335,30 +338,33 @@ const i18n = {
     's02.reg.eyebrow':         'Season 02',
     's02.reg.b2':              'Coffee break and closing cocktail included',
     's02.reg.b3':              'Exclusive Liga S02 materials',
-    's02.speakers.badge1':     '14 speakers confirmed',
+    's02.speakers.badge1':     '13 speakers confirmed',
     's02.tbd':                 'TBA',
     's02.agenda.item1.title':  'Coffee | Networking',
     's02.agenda.item1.desc':   'Welcome and the first connections among attendees.',
     's02.agenda.item2.title':  'Opening | Welcome Remarks',
     's02.agenda.item2.desc':   'Official opening of The Commerce League S02.',
-    's02.agenda.item3.title':  'Banking Marketplaces',
-    's02.agenda.item3.desc':   'Banking store experts share their vision and experience.',
-    's02.agenda.item4.title':  'Reaching the Whole Country and Keeping the Promise',
-    's02.agenda.item4.desc':   'From the delivery promise to the customer\'s door.',
-    's02.agenda.item5.title':  'Same Day, Next Day: When Logistics Becomes Part of the Purchase Decision',
+    's02.agenda.item3.title':  'Panel 1 — From the Delivery Promise to the Customer\'s Door',
+    's02.agenda.item3.desc':   'Reaching the whole country and keeping the promise.',
+    's02.agenda.item4.title':  'Banking Marketplaces',
+    's02.agenda.item4.desc':   'Banking store experts share their vision and experience.',
+    's02.agenda.item5.title':  'Panel 2 — Same Day, Next Day: When Logistics Becomes Part of the Purchase Decision',
     's02.agenda.item5.desc':   'Speed is also part of the experience.',
     's02.agenda.item6.title':  'Break',
     's02.agenda.item6.desc':   'Short break.',
-    's02.agenda.item7.title':  'One Integration, Multiple Logistics Options',
-    's02.agenda.item7.desc':   'Scaling without losing control.',
-    's02.agenda.item8.title':  'More Delivery Options, Better Experience',
+    's02.agenda.item7.title':  'Semillero Digital',
+    's02.agenda.item7.desc':   'An initiative to boost the digital ecosystem.',
+    's02.agenda.item8.title':  'Panel 3 — More Delivery Options, Better Experience',
     's02.agenda.item8.desc':   'The customer chooses where to receive.',
     's02.agenda.item9.title':  'Commercial Strategy | Banking Stores Get Ready for Cyber Monday',
     's02.agenda.item9.desc':   'How to prepare for one of the biggest events of the year.',
-    's02.agenda.item10.title': 'Closing Remarks',
-    's02.agenda.item10.desc':  'Official closing of The Commerce League S02.',
+    's02.agenda.item10.title': 'Panel 4 — One Integration, Multiple Logistics Options',
+    's02.agenda.item10.desc':  'Scaling without losing control.',
+    's02.agenda.item11.title': 'Closing Remarks',
+    's02.agenda.item11.desc':  'Official closing of The Commerce League S02.',
     's02.sponsor.placeholder': 'Sponsor TBA',
     's02.footer.viewS01':      'View Season 01 →',
+    's02.map.tagline':         'Discover how logistics moves Argentina',
 
     // Season 01 page (s01.html) — announcement banner pointing to S02
     's01.banner.viewS02':      '🎉 Season 02 is coming — See details →',
@@ -828,11 +834,7 @@ function initSeasonModal() {
 // ============================================================
 function initHeroParticles() {
   const canvas = $('#hero-particles');
-  // Measure .hero__content, not #hero: the canvas now lives inside it
-  // (same stacking context as the logo/text) so it can paint above the
-  // logo but below the text/buttons — see .hero__particles in style.css.
-  const heroContent = $('.hero__content');
-  if (!canvas || !heroContent) return;
+  if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
   const COLORS = ['#FF6B35', '#FF8C00', '#FFF0E0'];
@@ -856,13 +858,11 @@ function initHeroParticles() {
   }
 
   function resize() {
-    // Width comes from the viewport, not .hero__content's rect — the
-    // canvas breaks out of the container (see .hero__particles CSS,
-    // left:50%/translateX(-50%)/width:100vw) so it spans edge to edge
-    // instead of being clipped to the container's max-width.
-    const rect = heroContent.getBoundingClientRect();
+    // The canvas is a fixed, full-viewport background (see
+    // .hero__particles in style.css) — size it to the viewport, not
+    // any particular section.
     width = window.innerWidth;
-    height = rect.height;
+    height = window.innerHeight;
     canvas.width = width * dpr;
     canvas.height = height * dpr;
     canvas.style.width = `${width}px`;
@@ -975,6 +975,396 @@ function initHeroParticles() {
 }
 
 // ============================================================
+// Hero Argentina map — animated dotted-country intro on #hero-map
+// (S02 hero only). Draws a stylized, hand-simplified outline of
+// continental Argentina (no islands) as a field of dots, animates
+// 4 logistics routes fanning out from Buenos Aires, then reveals
+// the event date/time/place overlaid on top. Runs once; after the
+// intro the map stays as a static backdrop with a subtle city pulse.
+// ============================================================
+function initHeroMap() {
+  const canvas = $('#hero-map');
+  const infoEl = $('#hero-map-info');
+  if (!canvas || !infoEl) return;
+
+  const ctx = canvas.getContext('2d');
+  const offscreen = document.createElement('canvas');
+  const octx = offscreen.getContext('2d');
+
+  const reduceMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Hand-simplified outline of continental Argentina (no islands),
+  // [lon, lat] pairs, clockwise from La Quiaca (Jujuy, N tip): east
+  // along the Bolivia/Paraguay border through Formosa and Chaco,
+  // out to the Misiones salient (the country's easternmost point,
+  // near Iguazú, ~-53.8°/-26°), back down along the Uruguay river
+  // through Corrientes/Entre Ríos and the Litoral mesopotámico into
+  // Buenos Aires, then Patagonia to Tierra del Fuego, then back
+  // north along the Andes (Chile border) to La Quiaca. ~52 points.
+  const ARGENTINA_OUTLINE = [
+    [-65.6, -22.1], [-64.5, -22.0], [-62.5, -22.2], [-60.5, -22.4],
+    [-58.4, -23.2], [-57.9, -24.3], [-57.3, -25.4], [-55.8, -25.7],
+    [-53.8, -25.6], [-53.8, -26.9], [-54.7, -27.8], [-55.5, -28.3],
+    [-57.1, -29.7], [-57.9, -31.4], [-58.5, -33.0], [-58.5, -34.2],
+    [-58.4, -34.6], [-57.5, -35.5], [-57.1, -37.0], [-57.5, -38.0],
+    [-58.7, -38.6], [-62.3, -38.9], [-63.0, -40.8], [-64.9, -40.7],
+    [-64.0, -42.5], [-65.0, -42.8], [-67.5, -45.9], [-65.9, -47.7],
+    [-67.7, -49.3], [-68.0, -50.5], [-69.2, -51.6], [-68.6, -52.6],
+    [-67.7, -53.8], [-68.3, -54.8], [-68.6, -54.9], [-69.5, -54.7],
+    [-70.0, -52.8], [-73.0, -50.3], [-72.0, -47.9], [-71.8, -46.5],
+    [-71.7, -43.0], [-71.5, -41.1], [-71.2, -39.6], [-70.5, -38.0],
+    [-70.2, -35.5], [-70.0, -32.8], [-69.3, -31.5], [-69.0, -30.0],
+    [-68.6, -28.5], [-68.0, -27.0], [-67.5, -24.5], [-66.8, -23.0],
+  ];
+
+  const CITIES = [
+    { key: 'ba',  name: 'Buenos Aires',       lon: -58.42, lat: -34.61, isPrimary: true },
+    { key: 'cba', name: 'Córdoba',            lon: -64.18, lat: -31.42 },
+    { key: 'ros', name: 'Rosario',            lon: -60.64, lat: -32.95 },
+    { key: 'mza', name: 'Mendoza',            lon: -68.85, lat: -32.89 },
+    { key: 'tuc', name: 'Tucumán',            lon: -65.22, lat: -26.82 },
+    { key: 'sal', name: 'Salta',              lon: -65.41, lat: -24.79 },
+    { key: 'res', name: 'Resistencia',        lon: -59.00, lat: -27.45 },
+    { key: 'neu', name: 'Neuquén',            lon: -68.06, lat: -38.95 },
+    { key: 'chu', name: 'Comodoro Rivadavia', lon: -67.48, lat: -45.86 },
+    { key: 'ush', name: 'Ushuaia',            lon: -68.30, lat: -54.80 },
+  ];
+
+  // Waypoints exist only to bend a route so it travels down the
+  // Patagonian mainland instead of cutting a straight line over the
+  // Atlantic — they're not drawn as city markers.
+  const WAYPOINTS = {
+    patN: { lon: -64.9, lat: -40.7 }, // Río Negro coast (San Antonio Oeste)
+    patS: { lon: -69.2, lat: -51.6 }, // Río Gallegos
+  };
+
+  // Every route starts at Buenos Aires (element 0) and may pass
+  // through one or more Patagonia waypoints before its destination
+  // (the last element) — drawRoutes() walks each route's points in
+  // order, so the line and its glowing head always travel outward
+  // FROM Buenos Aires, following the country's shape rather than a
+  // straight line over open ocean.
+  const ROUTES = [
+    ['ba', 'cba'],
+    ['ba', 'ros'],
+    ['ba', 'mza'],
+    ['ba', 'tuc'],
+    ['ba', 'sal'],
+    ['ba', 'res'],
+    ['ba', 'neu'],
+    ['ba', 'patN', 'chu'],
+    ['ba', 'patN', 'patS', 'ush'],
+  ];
+
+  const PHASE1_END = 2000;   // dots fade in
+  const PHASE2_START = 2000;
+  const PHASE2_END = 5000;   // routes travel
+  const ROUTE_DURATION = 1500;
+  const ROUTE_STAGGER = 180;
+  const INFO_FADE_START = 5000;
+
+  let dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let width = 0;
+  let height = 0;
+  let bounds = null;
+  let projectedOutline = [];
+  let projectedPoints = {}; // cities + waypoints, keyed by key
+  let routeGeometry = [];   // parallel to ROUTES: { pts, cumFrac }
+  let dots = [];
+  let staticLayerFinalized = false;
+  let startTime = performance.now();
+  let rafId = null;
+  let resizeTimeout = null;
+  let infoRevealed = false;
+
+  function randomBetween(min, max) {
+    return min + Math.random() * (max - min);
+  }
+
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+  }
+
+  function computeBounds(outline) {
+    let lonMin = Infinity, lonMax = -Infinity, latMin = Infinity, latMax = -Infinity;
+    for (const [lon, lat] of outline) {
+      if (lon < lonMin) lonMin = lon;
+      if (lon > lonMax) lonMax = lon;
+      if (lat < latMin) latMin = lat;
+      if (lat > latMax) latMax = lat;
+    }
+    const lonScale = Math.cos(((latMin + latMax) / 2) * Math.PI / 180);
+    return { lonMin, lonMax, latMin, latMax, lonScale };
+  }
+
+  function project(lon, lat) {
+    const { lonMin, latMax, lonScale } = bounds;
+    const spanX = (bounds.lonMax - bounds.lonMin) * lonScale;
+    const spanY = bounds.latMax - bounds.latMin;
+    const padding = 0.06;
+    const availW = width * (1 - padding * 2);
+    const availH = height * (1 - padding * 2);
+    const scale = Math.min(availW / spanX, availH / spanY);
+    const drawW = spanX * scale;
+    const drawH = spanY * scale;
+    const offsetX = (width - drawW) / 2;
+    const offsetY = (height - drawH) / 2;
+    return [
+      offsetX + (lon - lonMin) * lonScale * scale,
+      offsetY + (latMax - lat) * scale,
+    ];
+  }
+
+  function pointInPolygon(x, y, poly) {
+    let inside = false;
+    for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+      const [xi, yi] = poly[i];
+      const [xj, yj] = poly[j];
+      const intersect = (yi > y) !== (yj > y) &&
+        x < (xj - xi) * (y - yi) / (yj - yi) + xi;
+      if (intersect) inside = !inside;
+    }
+    return inside;
+  }
+
+  function buildDots() {
+    const spacing = 6;
+    const built = [];
+    for (let gy = spacing / 2; gy < height; gy += spacing) {
+      for (let gx = spacing / 2; gx < width; gx += spacing) {
+        const x = gx + (Math.random() - 0.5) * 3;
+        const y = gy + (Math.random() - 0.5) * 3;
+        if (pointInPolygon(x, y, projectedOutline)) {
+          built.push({
+            x, y,
+            r: randomBetween(1, 2),
+            baseOpacity: randomBetween(0.4, 0.6),
+            delay: randomBetween(0, PHASE1_END - 500),
+            duration: randomBetween(400, 900),
+          });
+        }
+      }
+    }
+    return built;
+  }
+
+  function buildRouteGeometry() {
+    routeGeometry = ROUTES.map((route) => {
+      const pts = route.map((key) => projectedPoints[key]);
+      const lens = [];
+      let total = 0;
+      for (let i = 0; i < pts.length - 1; i++) {
+        const [x1, y1] = pts[i];
+        const [x2, y2] = pts[i + 1];
+        const d = Math.hypot(x2 - x1, y2 - y1);
+        lens.push(d);
+        total += d;
+      }
+      const cumFrac = [0];
+      let acc = 0;
+      for (const d of lens) {
+        acc += d;
+        cumFrac.push(total > 0 ? acc / total : 1);
+      }
+      return { pts, cumFrac };
+    });
+  }
+
+  // Point along a (possibly multi-segment) route at overall progress
+  // t (0..1), moving at roughly constant speed across segments of
+  // different lengths.
+  function pointAtProgress(geometry, t) {
+    const { pts, cumFrac } = geometry;
+    if (t <= 0) return pts[0];
+    if (t >= 1) return pts[pts.length - 1];
+    let segIndex = 0;
+    for (let i = 0; i < cumFrac.length - 1; i++) {
+      if (t >= cumFrac[i] && t <= cumFrac[i + 1]) { segIndex = i; break; }
+    }
+    const segStart = cumFrac[segIndex];
+    const segEnd = cumFrac[segIndex + 1];
+    const localT = segEnd > segStart ? (t - segStart) / (segEnd - segStart) : 1;
+    const [x1, y1] = pts[segIndex];
+    const [x2, y2] = pts[segIndex + 1];
+    return [x1 + (x2 - x1) * localT, y1 + (y2 - y1) * localT];
+  }
+
+  function resize() {
+    const rect = canvas.getBoundingClientRect();
+    width = rect.width;
+    height = rect.height;
+
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    offscreen.width = width * dpr;
+    offscreen.height = height * dpr;
+    octx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    bounds = computeBounds(ARGENTINA_OUTLINE);
+    projectedOutline = ARGENTINA_OUTLINE.map(([lon, lat]) => project(lon, lat));
+
+    projectedPoints = {};
+    CITIES.forEach((c) => { projectedPoints[c.key] = project(c.lon, c.lat); });
+    Object.keys(WAYPOINTS).forEach((key) => {
+      const wp = WAYPOINTS[key];
+      projectedPoints[key] = project(wp.lon, wp.lat);
+    });
+    buildRouteGeometry();
+
+    dots = buildDots();
+    staticLayerFinalized = false;
+  }
+
+  function drawStaticLayer(elapsed) {
+    octx.clearRect(0, 0, width, height);
+    octx.fillStyle = '#FF6B35';
+    for (const d of dots) {
+      const t = clamp((elapsed - d.delay) / d.duration, 0, 1);
+      const opacity = d.baseOpacity * t;
+      if (opacity <= 0) continue;
+      octx.globalAlpha = opacity;
+      octx.beginPath();
+      octx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+      octx.fill();
+    }
+    octx.globalAlpha = 1;
+  }
+
+  function routeProgress(index, elapsed) {
+    const startT = PHASE2_START + index * ROUTE_STAGGER;
+    return clamp((elapsed - startT) / ROUTE_DURATION, 0, 1);
+  }
+
+  function drawRoutes(elapsed) {
+    ROUTES.forEach((route, i) => {
+      const t = routeProgress(i, elapsed);
+      if (t <= 0) return;
+      const geometry = routeGeometry[i];
+      const [hx, hy] = pointAtProgress(geometry, t);
+
+      // Trace from Buenos Aires (pts[0]) through every fully-completed
+      // waypoint segment, then partway into the current segment up to
+      // the glowing head — the path always grows outward from BA.
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255, 107, 53, 0.7)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(geometry.pts[0][0], geometry.pts[0][1]);
+      for (let p = 1; p < geometry.pts.length; p++) {
+        if (geometry.cumFrac[p] <= t) {
+          ctx.lineTo(geometry.pts[p][0], geometry.pts[p][1]);
+        } else {
+          ctx.lineTo(hx, hy);
+          break;
+        }
+      }
+      ctx.stroke();
+      ctx.restore();
+
+      if (t < 1) {
+        ctx.save();
+        ctx.shadowColor = '#FF6B35';
+        ctx.shadowBlur = 8;
+        ctx.fillStyle = '#FFDDBB';
+        ctx.beginPath();
+        ctx.arc(hx, hy, 2.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    });
+  }
+
+  function cityGrowProgress(city, elapsed) {
+    if (city.isPrimary) return 1;
+    const routeIndex = ROUTES.findIndex((r) => r[r.length - 1] === city.key);
+    if (routeIndex === -1) return 1;
+    return routeProgress(routeIndex, elapsed);
+  }
+
+  function drawCities(elapsed) {
+    CITIES.forEach((city) => {
+      const [x, y] = projectedPoints[city.key];
+      const grow = cityGrowProgress(city, elapsed);
+      const baseR = city.isPrimary ? 5 : 2 + grow * 1.5;
+      let r = baseR;
+      let glow = city.isPrimary ? 10 : grow * 6;
+
+      if (elapsed >= INFO_FADE_START) {
+        const pulse = Math.sin((elapsed - INFO_FADE_START) * 0.0015 + (city.pulseOffset || 0));
+        r = baseR + pulse * 1.2;
+        glow += pulse * 4;
+      }
+
+      ctx.save();
+      ctx.shadowColor = '#FF6B35';
+      ctx.shadowBlur = Math.max(glow, 0);
+      ctx.fillStyle = city.isPrimary ? '#FFB088' : '#FF6B35';
+      ctx.globalAlpha = city.isPrimary ? 1 : clamp(0.5 + grow * 0.5, 0, 1);
+      ctx.beginPath();
+      ctx.arc(x, y, Math.max(r, 1), 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    });
+  }
+
+  function revealInfo() {
+    if (infoRevealed) return;
+    infoRevealed = true;
+    infoEl.classList.add('hero__map-info--visible');
+  }
+
+  function renderFrame(elapsed) {
+    if (!staticLayerFinalized) {
+      drawStaticLayer(elapsed);
+      if (elapsed >= PHASE1_END) staticLayerFinalized = true;
+    }
+
+    ctx.clearRect(0, 0, width, height);
+    ctx.drawImage(offscreen, 0, 0, width, height);
+    drawRoutes(elapsed);
+    drawCities(elapsed);
+
+    if (elapsed >= INFO_FADE_START) revealInfo();
+  }
+
+  function loop() {
+    renderFrame(performance.now() - startTime);
+    rafId = requestAnimationFrame(loop);
+  }
+
+  CITIES.forEach((c) => { c.pulseOffset = Math.random() * Math.PI * 2; });
+
+  resize();
+
+  if (reduceMotion) {
+    // Skip the intro entirely — render the finished state right away.
+    drawStaticLayer(PHASE1_END);
+    staticLayerFinalized = true;
+    renderFrame(INFO_FADE_START + 1);
+  } else {
+    loop();
+  }
+
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      if (rafId) cancelAnimationFrame(rafId);
+      resize();
+      if (reduceMotion) {
+        drawStaticLayer(PHASE1_END);
+        staticLayerFinalized = true;
+        renderFrame(performance.now() - startTime);
+      } else {
+        loop();
+      }
+    }, 150);
+  });
+}
+
+// ============================================================
 // Boot
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -988,4 +1378,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initTour();
   initSeasonModal();
   initHeroParticles();
+  initHeroMap();
 });

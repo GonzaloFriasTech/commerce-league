@@ -304,12 +304,14 @@ a:hover { opacity: 0.75; }
    ============================================================ */
 .hero {
   position: relative;
+  z-index: 1;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   overflow: hidden;
-  background-color: var(--color-bg);
+  /* No opaque background: the fixed #hero-particles canvas (z-index:0)
+     needs to show through. body already provides the base #000001. */
   padding-top: var(--nav-height);
 }
 
@@ -324,16 +326,17 @@ a:hover { opacity: 0.75; }
    All of this is still well below the fixed navbar (z-index:200).
    ============================================================ */
 .hero__particles {
-  /* .hero__content is a `.container` (max-width + inline padding), so a
-     plain inset:0/width:100% would clip the canvas to that narrower box.
-     Break out to full viewport width regardless of the parent's max-width. */
-  position: absolute;
+  /* Fixed, full-viewport background layer — sits behind every section
+     on the page (header, hero, agenda, speakers, sponsors, registro,
+     footer), not just the hero. Every section below is bumped to
+     z-index:1+ (position:relative) so it paints above this layer;
+     the fixed header/chatbot/tour/modal already sit much higher. */
+  position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   width: 100vw;
-  height: 100%;
-  z-index: 1;
+  height: 100vh;
+  z-index: 0;
   pointer-events: none;
 }
 
@@ -350,7 +353,8 @@ a:hover { opacity: 0.75; }
   width: 100%;
   overflow: hidden;
   background: #000001;
-  border-bottom: 1px solid var(--color-border);
+  border-top: 2px solid #FF6B35;
+  border-bottom: 2px solid #FF6B35;
   padding: 10px 0;
   white-space: nowrap;
   position: relative;
@@ -361,7 +365,7 @@ a:hover { opacity: 0.75; }
   display: inline-flex;
   align-items: center;
   gap: 1.5rem;
-  animation: ticker 40s linear infinite;
+  animation: ticker 28s linear infinite;
   will-change: transform;
 }
 
@@ -370,20 +374,23 @@ a:hover { opacity: 0.75; }
 }
 
 .ticker__track span {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: #FFFFFF;
   flex-shrink: 0;
 }
 
+/* Every 2-3 items alternates to the brand orange for contrast/rhythm */
+.ticker__track span.ticker__item--accent {
+  color: #FF6B35;
+}
+
 .ticker__sep {
-  background: var(--grad-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-size: 0.6rem !important;
+  color: #FF6B35 !important;
+  font-size: 1.25rem !important;
+  font-weight: 400;
 }
 
 @keyframes ticker {
@@ -532,7 +539,9 @@ a:hover { opacity: 0.75; }
    ============================================================ */
 .speakers {
   padding-block: var(--space-2xl);
-  background: #000001;
+  /* No opaque background — lets the fixed particle canvas show through. */
+  position: relative;
+  z-index: 1;
 }
 
 /* Subtitle + info badges */
@@ -735,7 +744,9 @@ a:hover { opacity: 0.75; }
    ============================================================ */
 .sponsors {
   padding-block: var(--space-2xl);
-  background: #000001;
+  /* No opaque background — lets the fixed particle canvas show through. */
+  position: relative;
+  z-index: 1;
 }
 
 /* Section eyebrow */
@@ -981,8 +992,9 @@ a.sponsor-item:hover {
    ============================================================ */
 .agenda {
   padding-block: var(--space-2xl);
-  background: #000001;
+  /* No opaque background — lets the fixed particle canvas show through. */
   position: relative;
+  z-index: 1;
   overflow: hidden;
 }
 
@@ -1237,7 +1249,9 @@ a.sponsor-item:hover {
    ============================================================ */
 .registro {
   padding-block: var(--space-2xl);
-  background: #000001;
+  /* No opaque background — lets the fixed particle canvas show through. */
+  position: relative;
+  z-index: 1;
 }
 
 .registro__inner {
@@ -1715,13 +1729,15 @@ a.sponsor-item:hover {
    Footer
    ============================================================ */
 .site-footer {
-  background-color: var(--color-surface);
+  /* No opaque background — lets the fixed particle canvas show through. */
   border-top: 1px solid var(--color-border);
   color: var(--color-text-dim);
   text-align: center;
   padding-block: var(--space-xl);
   font-size: 0.8rem;
   letter-spacing: 0.04em;
+  position: relative;
+  z-index: 1;
 }
 
 /* ============================================================
@@ -1932,9 +1948,67 @@ a.sponsor-item:hover {
 }
 
 /* ============================================================
-   Hero confirmed-info block (index.html S02 landing)
+   Hero Argentina map (index.html S02 landing) — animated dotted
+   country silhouette drawn on #hero-map via initHeroMap() in
+   script.js, with the confirmed date/time/place fading in on top
+   once the intro animation finishes.
    ============================================================ */
-.hero__info {
-  max-width: 460px;
+.hero__map-wrap {
+  position: relative;
+  width: min(340px, 88vw);
+  aspect-ratio: 340 / 700;
   margin-inline: auto;
+}
+
+.hero__map {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__map-info {
+  /* Positioned over Buenos Aires (~40% down the projected silhouette)
+     so the card naturally sits on top of the route hub instead of
+     leaving Patagonia's empty lower half uncovered. */
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, calc(-50% + 8px));
+  width: 88%;
+  text-align: left;
+  background: rgba(0, 0, 1, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 107, 53, 0.25);
+  border-radius: 12px;
+  padding: 0.65rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero__map-info--visible {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.hero__map-info p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.76rem;
+  color: var(--color-text);
+  white-space: normal;
+}
+
+.hero__map-info .hero__map-tagline {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #FF6B35;
+  margin-bottom: 0.15rem;
 }

@@ -13,6 +13,9 @@
   </head>
   <body>
 
+    <!-- ===== FLOATING PARTICLES (fixed full-page background) ===== -->
+    <canvas id="hero-particles" class="hero__particles" aria-hidden="true"></canvas>
+
     <!-- ===== NAVBAR ===== -->
     <header class="site-header" id="site-header">
       <div class="container nav-container">
@@ -52,23 +55,18 @@
       <!-- Ticker strip -->
       <div class="hero__ticker" aria-hidden="true">
         <div class="ticker__track" id="ticker-track">
-          <span>avenidamas</span><span class="ticker__sep">■</span>
-          <span>Marketplace Bancario</span><span class="ticker__sep">■</span>
-          <span>The Commerce League S02</span><span class="ticker__sep">■</span>
-          <span>Networking &amp; Comunidad</span><span class="ticker__sep">■</span>
-          <span>Innovación Fintech</span><span class="ticker__sep">■</span>
-          <span>Acceso Gratuito</span><span class="ticker__sep">■</span>
-          <span>Cupos Limitados</span><span class="ticker__sep">■</span>
+          <span>avenidamas</span><span class="ticker__sep">✦</span>
+          <span>Marketplace Bancario</span><span class="ticker__sep">✦</span>
+          <span class="ticker__item--accent">The Commerce League S02</span><span class="ticker__sep">✦</span>
+          <span class="ticker__item--accent">Networking &amp; Comunidad</span><span class="ticker__sep">✦</span>
+          <span>Innovación Fintech</span><span class="ticker__sep">✦</span>
+          <span>Acceso Gratuito</span><span class="ticker__sep">✦</span>
+          <span class="ticker__item--accent">Cupos Limitados</span><span class="ticker__sep">✦</span>
         </div>
       </div>
 
       <!-- Main hero content -->
       <div class="container hero__content">
-
-        <!-- Floating particles: same stacking context as the content below,
-             so it paints above .hero__logo-band (unpositioned) but under
-             every .hero__above-particles element (explicit higher z-index). -->
-        <canvas id="hero-particles" class="hero__particles" aria-hidden="true"></canvas>
 
         <a
           href="https://avenidamas.com/"
@@ -94,11 +92,15 @@
           Un día para conectar con quienes están moviendo el comercio digital en Argentina.
         </p>
 
-        <ul class="hero__info hero__above-particles s2-modal__info fade-up" style="--delay: 0.2s">
-          <li><span class="s2-modal__info-icon" aria-hidden="true">📅</span><span data-i18n="s2.date">28 de septiembre de 2026</span></li>
-          <li><span class="s2-modal__info-icon" aria-hidden="true">🕐</span><span data-i18n="s2.time">14:00 a 18:00 hs</span></li>
-          <li><span class="s2-modal__info-icon" aria-hidden="true">📍</span><span data-i18n="s2.place">Workplace by IRSA — Vedia 3892, CABA</span></li>
-        </ul>
+        <div class="hero__map-wrap hero__above-particles fade-up" style="--delay: 0.2s">
+          <canvas id="hero-map" class="hero__map" aria-hidden="true"></canvas>
+          <div class="hero__map-info" id="hero-map-info">
+            <p class="hero__map-tagline" data-i18n="s02.map.tagline">Descubrí cómo la logística mueve Argentina</p>
+            <p><span class="s2-modal__info-icon" aria-hidden="true">📅</span><span data-i18n="s2.date">28 de septiembre de 2026</span></p>
+            <p><span class="s2-modal__info-icon" aria-hidden="true">🕐</span><span data-i18n="s2.time">14:00 a 18:00 hs</span></p>
+            <p><span class="s2-modal__info-icon" aria-hidden="true">📍</span><span data-i18n="s2.place">Workplace by IRSA — Vedia 3892, CABA</span></p>
+          </div>
+        </div>
 
         <div class="hero__ctas hero__above-particles fade-up" style="--delay: 0.24s">
           <a href="#registro" class="btn btn-primary" data-i18n="hero.cta1">Quiero mi lugar →</a>
@@ -149,9 +151,9 @@
             </div>
           </li>
 
-          <!-- 14:45 Apertura -->
+          <!-- 14:30 Apertura -->
           <li class="timeline__item">
-            <div class="timeline__time">14:45</div>
+            <div class="timeline__time">14:30</div>
             <div class="timeline__dot timeline__dot--grad"></div>
             <div class="timeline__card timeline__card--featured">
               <span class="timeline__speaker">Daniel Jejcic</span>
@@ -161,45 +163,45 @@
             </div>
           </li>
 
-          <!-- 15:00 Marketplaces bancarios -->
+          <!-- 14:45 Panel 1: entrega a la puerta del cliente -->
           <li class="timeline__item">
-            <div class="timeline__time">15:00</div>
+            <div class="timeline__time">14:45</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__speaker">C. Pirán, K. Macario, D. Riquelme, A. Lahún · Mod. R. Calderón</span>
+              <span class="badge badge--panel" data-i18n="agenda.cat.panel">Panel</span>
+              <h3 class="timeline__title" data-i18n="s02.agenda.item3.title">Panel 1 — De la promesa de entrega a la puerta del cliente</h3>
+              <p class="timeline__desc" data-i18n="s02.agenda.item3.desc">Llegar a todo el país y cumplir la promesa.</p>
+            </div>
+          </li>
+
+          <!-- 15:15 Marketplaces bancarios -->
+          <li class="timeline__item">
+            <div class="timeline__time">15:15</div>
             <div class="timeline__dot"></div>
             <div class="timeline__card">
               <span class="timeline__speaker">M. Picolla, P. Vidal, P. Cirino · Mod. D. Jejcic</span>
               <span class="badge badge--panel" data-i18n="agenda.cat.panel">Panel</span>
-              <h3 class="timeline__title" data-i18n="s02.agenda.item3.title">Marketplaces bancarios</h3>
-              <p class="timeline__desc" data-i18n="s02.agenda.item3.desc">Expertos de tiendas bancarias comparten su visión y experiencia.</p>
+              <h3 class="timeline__title" data-i18n="s02.agenda.item4.title">Marketplaces bancarios</h3>
+              <p class="timeline__desc" data-i18n="s02.agenda.item4.desc">Expertos de tiendas bancarias comparten su visión y experiencia.</p>
             </div>
           </li>
 
-          <!-- 15:20 Llegar a todo el país -->
+          <!-- 15:30 Panel 2: Same Day, Next Day -->
           <li class="timeline__item">
-            <div class="timeline__time">15:20</div>
+            <div class="timeline__time">15:30</div>
             <div class="timeline__dot"></div>
             <div class="timeline__card">
-              <span class="timeline__speaker">C. Pirán, K. Macario, G. Mamone, D. Riquelme, A. Lahún · Mod. R. Calderón &amp; B. Recalde</span>
+              <span class="timeline__speaker">N. Alves (Chazki), G. Mamone (Bluemail) · Mod. B. Recalde</span>
               <span class="badge badge--panel" data-i18n="agenda.cat.panel">Panel</span>
-              <h3 class="timeline__title" data-i18n="s02.agenda.item4.title">Llegar a todo el país y cumplir la promesa</h3>
-              <p class="timeline__desc" data-i18n="s02.agenda.item4.desc">De la promesa de entrega a la puerta del cliente.</p>
-            </div>
-          </li>
-
-          <!-- 15:50 Same Day, Next Day -->
-          <li class="timeline__item">
-            <div class="timeline__time">15:50</div>
-            <div class="timeline__dot"></div>
-            <div class="timeline__card">
-              <span class="timeline__speaker">N. Alves (Chazki) · Mod. R. Calderón &amp; B. Recalde</span>
-              <span class="badge badge--panel" data-i18n="agenda.cat.panel">Panel</span>
-              <h3 class="timeline__title" data-i18n="s02.agenda.item5.title">Same Day, Next Day: cuando la logística se convierte en parte de la decisión de compra</h3>
+              <h3 class="timeline__title" data-i18n="s02.agenda.item5.title">Panel 2 — Same Day, Next Day: cuando la logística se convierte en parte de la decisión de compra</h3>
               <p class="timeline__desc" data-i18n="s02.agenda.item5.desc">La velocidad también es experiencia.</p>
             </div>
           </li>
 
-          <!-- 16:05 Break -->
+          <!-- 15:45 Break -->
           <li class="timeline__item">
-            <div class="timeline__time">16:05</div>
+            <div class="timeline__time">15:45</div>
             <div class="timeline__dot"></div>
             <div class="timeline__card">
               <span class="badge badge--networking" data-i18n="agenda.cat.networking">Networking</span>
@@ -208,33 +210,32 @@
             </div>
           </li>
 
-          <!-- 16:30 Una integración, múltiples alternativas logísticas -->
+          <!-- 16:00 Semillero Digital -->
           <li class="timeline__item">
-            <div class="timeline__time">16:30</div>
+            <div class="timeline__time">16:00</div>
             <div class="timeline__dot"></div>
             <div class="timeline__card">
-              <span class="timeline__speaker">M. Celery (Envío Pack) · Mod. R. Calderón &amp; B. Recalde</span>
-              <span class="badge badge--panel" data-i18n="agenda.cat.panel">Panel</span>
-              <h3 class="timeline__title" data-i18n="s02.agenda.item7.title">Una integración, múltiples alternativas logísticas</h3>
-              <p class="timeline__desc" data-i18n="s02.agenda.item7.desc">Escalar sin perder el control.</p>
+              <span class="badge badge--workshop" data-i18n="agenda.cat.workshop">Workshop</span>
+              <h3 class="timeline__title" data-i18n="s02.agenda.item7.title">Semillero Digital</h3>
+              <p class="timeline__desc" data-i18n="s02.agenda.item7.desc">Una iniciativa para potenciar el ecosistema digital.</p>
             </div>
           </li>
 
-          <!-- 16:45 Más opciones de entrega, mejor experiencia -->
+          <!-- 16:15 Panel 3: Más opciones de entrega -->
           <li class="timeline__item">
-            <div class="timeline__time">16:45</div>
+            <div class="timeline__time">16:15</div>
             <div class="timeline__dot"></div>
             <div class="timeline__card">
               <span class="timeline__speaker">M. Machado (HOP) · Mod. R. Calderón &amp; B. Recalde</span>
               <span class="badge badge--panel" data-i18n="agenda.cat.panel">Panel</span>
-              <h3 class="timeline__title" data-i18n="s02.agenda.item8.title">Más opciones de entrega, mejor experiencia</h3>
+              <h3 class="timeline__title" data-i18n="s02.agenda.item8.title">Panel 3 — Más opciones de entrega, mejor experiencia</h3>
               <p class="timeline__desc" data-i18n="s02.agenda.item8.desc">El cliente elige dónde recibir.</p>
             </div>
           </li>
 
-          <!-- 17:00 Estrategia Comercial: Cyber Monday -->
+          <!-- 16:30 Estrategia Comercial: Cyber Monday -->
           <li class="timeline__item">
-            <div class="timeline__time">17:00</div>
+            <div class="timeline__time">16:30</div>
             <div class="timeline__dot"></div>
             <div class="timeline__card">
               <span class="timeline__speaker">Eliana Velarde</span>
@@ -244,15 +245,27 @@
             </div>
           </li>
 
-          <!-- 17:20 Palabras de Cierre -->
+          <!-- 16:45 Panel 4: Una integración, múltiples alternativas logísticas -->
           <li class="timeline__item">
-            <div class="timeline__time">17:20</div>
+            <div class="timeline__time">16:45</div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__card">
+              <span class="timeline__speaker">M. Celery (Envío Pack) · Mod. R. Calderón &amp; B. Recalde</span>
+              <span class="badge badge--panel" data-i18n="agenda.cat.panel">Panel</span>
+              <h3 class="timeline__title" data-i18n="s02.agenda.item10.title">Panel 4 — Una integración, múltiples alternativas logísticas</h3>
+              <p class="timeline__desc" data-i18n="s02.agenda.item10.desc">Escalar sin perder el control.</p>
+            </div>
+          </li>
+
+          <!-- 17:00 Palabras de Cierre -->
+          <li class="timeline__item">
+            <div class="timeline__time">17:00</div>
             <div class="timeline__dot"></div>
             <div class="timeline__card">
               <span class="timeline__speaker">Daniel Jejcic</span>
               <span class="badge badge--cierre" data-i18n="agenda.cat.cierre">Cierre</span>
-              <h3 class="timeline__title" data-i18n="s02.agenda.item10.title">Palabras de Cierre</h3>
-              <p class="timeline__desc" data-i18n="s02.agenda.item10.desc">Cierre oficial de The Commerce League S02.</p>
+              <h3 class="timeline__title" data-i18n="s02.agenda.item11.title">Palabras de Cierre</h3>
+              <p class="timeline__desc" data-i18n="s02.agenda.item11.desc">Cierre oficial de The Commerce League S02.</p>
             </div>
           </li>
 
@@ -459,17 +472,14 @@
             </div>
           </div>
 
-          <!-- Speaker 14: Magali Picolla -->
-          <div class="speaker-card speaker-card--confirmed">
-            <a href="https://www.linkedin.com/in/magali-picolla-830103b5/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Magali Picolla en LinkedIn"></a>
+          <!-- Speaker pendiente: Banco Macro -->
+          <div class="speaker-card speaker-card--soon">
             <div class="speaker__avatar-wrap">
-              <a href="https://macro.com.ar/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Banco Macro</a>
-              <img src="assets/images/foto-piccola.jpg" alt="Magali Picolla" class="speaker__photo" />
+              <div class="speaker__initials" aria-hidden="true">?</div>
             </div>
             <div class="speaker__body">
-              <p class="speaker__name">Magali Picolla</p>
-              <p class="speaker__role">Loyalty - E-commerce | Team Leader</p>
-              <p class="speaker__company-label">Banco Macro</p>
+              <p class="speaker__name" data-i18n="s02.tbd">A confirmar</p>
+              <p class="speaker__role">Banco Macro</p>
             </div>
           </div>
 
@@ -503,6 +513,18 @@
             <div class="speaker__body">
               <p class="speaker__name" data-i18n="s02.tbd">A confirmar</p>
               <p class="speaker__role">Pickit S02</p>
+            </div>
+          </div>
+
+          <!-- Speaker pendiente: Banco Ciudad -->
+          <div class="speaker-card speaker-card--soon">
+            <div class="speaker__avatar-wrap">
+              <a href="https://bancociudad.com.ar/institucional/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Banco Ciudad</a>
+              <div class="speaker__initials" aria-hidden="true">?</div>
+            </div>
+            <div class="speaker__body">
+              <p class="speaker__name" data-i18n="s02.tbd">A confirmar</p>
+              <p class="speaker__role">Banco Ciudad</p>
             </div>
           </div>
 
