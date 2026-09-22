@@ -156,6 +156,7 @@ const i18n = {
     // Season 02 full page (index.html) — content unique to the S02 landing
     's02.hero.eyebrow':        'avenida+ presenta · Temporada 02',
     's02.reg.eyebrow':         'Temporada 02',
+    's02.reg.b2':              'Coffee break y cocktail de cierre incluidos',
     's02.reg.b3':              'Materiales exclusivos de Liga S02',
     's02.speakers.badge1':     '14 speakers confirmados',
     's02.tbd':                 'A confirmar',
@@ -332,6 +333,7 @@ const i18n = {
     // Season 02 full page (index.html) — content unique to the S02 landing
     's02.hero.eyebrow':        'avenida+ presents · Season 02',
     's02.reg.eyebrow':         'Season 02',
+    's02.reg.b2':              'Coffee break and closing cocktail included',
     's02.reg.b3':              'Exclusive Liga S02 materials',
     's02.speakers.badge1':     '14 speakers confirmed',
     's02.tbd':                 'TBA',
