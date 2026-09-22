@@ -55,13 +55,13 @@
       <!-- Ticker strip -->
       <div class="hero__ticker" aria-hidden="true">
         <div class="ticker__track" id="ticker-track">
-          <span>avenidamas</span><span class="ticker__sep">✦</span>
-          <span>Marketplace Bancario</span><span class="ticker__sep">✦</span>
-          <span class="ticker__item--accent">The Commerce League S02</span><span class="ticker__sep">✦</span>
-          <span class="ticker__item--accent">Networking &amp; Comunidad</span><span class="ticker__sep">✦</span>
-          <span>Innovación Fintech</span><span class="ticker__sep">✦</span>
-          <span>Acceso Gratuito</span><span class="ticker__sep">✦</span>
-          <span class="ticker__item--accent">Cupos Limitados</span><span class="ticker__sep">✦</span>
+          <span>avenidamas</span><span class="ticker__sep ticker__sep--accent">✦</span>
+          <span>Marketplace Bancario</span><span class="ticker__sep ticker__sep--accent">✦</span>
+          <span class="ticker__item--accent">The Commerce League S02</span><span class="ticker__sep ticker__sep--accent">✦</span>
+          <span class="ticker__item--accent">Networking &amp; Comunidad</span><span class="ticker__sep ticker__sep--accent">✦</span>
+          <span>Innovación Fintech</span><span class="ticker__sep ticker__sep--accent">✦</span>
+          <span>Acceso Gratuito</span><span class="ticker__sep ticker__sep--accent">✦</span>
+          <span class="ticker__item--accent">Cupos Limitados</span><span class="ticker__sep ticker__sep--accent">✦</span>
         </div>
       </div>
 
@@ -74,7 +74,7 @@
           rel="noopener noreferrer"
           class="hero__eyebrow hero__above-particles fade-up"
         >
-          <span class="eyebrow__dot" aria-hidden="true"></span>
+          <span class="eyebrow__dot eyebrow__dot--accent" aria-hidden="true"></span>
           <span data-i18n="s02.hero.eyebrow">avenida+ presenta · Temporada 02</span>
         </a>
 
@@ -147,7 +147,12 @@
             <div class="timeline__card">
               <span class="badge badge--networking" data-i18n="agenda.cat.networking">Networking</span>
               <h3 class="timeline__title" data-i18n="s02.agenda.item1.title">Café | Networking</h3>
-              <p class="timeline__desc" data-i18n="s02.agenda.item1.desc">Bienvenida y los primeros cruces entre asistentes.</p>
+              <button type="button" class="timeline__toggle" aria-expanded="false" data-i18n="agenda.expand">Ver detalle ↓</button>
+              <div class="timeline__details">
+                <div class="timeline__details-inner">
+                  <p class="timeline__desc" data-i18n="s02.agenda.item1.desc">Bienvenida y los primeros cruces entre asistentes.</p>
+                </div>
+              </div>
             </div>
           </li>
 
@@ -156,10 +161,17 @@
             <div class="timeline__time">14:30</div>
             <div class="timeline__dot timeline__dot--grad"></div>
             <div class="timeline__card timeline__card--featured">
-              <span class="timeline__speaker">Daniel Jejcic</span>
               <span class="badge badge--keynote" data-i18n="agenda.cat.keynote">Keynote</span>
               <h3 class="timeline__title" data-i18n="s02.agenda.item2.title">Apertura | Palabras de bienvenida</h3>
-              <p class="timeline__desc" data-i18n="s02.agenda.item2.desc">Apertura oficial de The Commerce League S02.</p>
+              <button type="button" class="timeline__toggle" aria-expanded="false" data-i18n="agenda.expand">Ver detalle ↓</button>
+              <div class="timeline__details">
+                <div class="timeline__details-inner">
+                  <div class="timeline__speakers">
+                    <a href="#speaker-daniel-jejcic" class="timeline__speaker-name">Daniel Jejcic</a>
+                  </div>
+                  <p class="timeline__desc" data-i18n="s02.agenda.item2.desc">Apertura oficial de The Commerce League S02.</p>
+                </div>
+              </div>
             </div>
           </li>
 
@@ -168,10 +180,29 @@
             <div class="timeline__time">14:45</div>
             <div class="timeline__dot"></div>
             <div class="timeline__card">
-              <span class="timeline__speaker">C. Pirán, K. Macario, D. Riquelme, A. Lahún · Mod. R. Calderón</span>
               <span class="badge badge--panel" data-i18n="agenda.cat.panel">Panel</span>
               <h3 class="timeline__title" data-i18n="s02.agenda.item3.title">Panel 1 — De la promesa de entrega a la puerta del cliente</h3>
-              <p class="timeline__desc" data-i18n="s02.agenda.item3.desc">Llegar a todo el país y cumplir la promesa.</p>
+              <button type="button" class="timeline__toggle" aria-expanded="false" data-i18n="agenda.expand">Ver detalle ↓</button>
+              <div class="timeline__details">
+                <div class="timeline__details-inner">
+                  <div class="timeline__speakers">
+                    <a href="#speaker-carlos-piran" class="timeline__speaker-name">Carlos Pirán</a>
+                    <a href="https://www.southpost.com.ar/" target="_blank" rel="noopener noreferrer" class="timeline__speaker-company">South Post</a>
+                    <span class="timeline__speaker-sep">,</span>
+                    <a href="#speaker-karina-macario" class="timeline__speaker-name">Karina Macario</a>
+                    <a href="https://www.urbanoexpress.com/" target="_blank" rel="noopener noreferrer" class="timeline__speaker-company">Urbano</a>
+                    <span class="timeline__speaker-sep">,</span>
+                    <a href="#speaker-debora-riquelme" class="timeline__speaker-name">Débora Riquelme</a>
+                    <a href="https://www.andreani.com/" target="_blank" rel="noopener noreferrer" class="timeline__speaker-company">Andreani</a>
+                    <span class="timeline__speaker-sep">,</span>
+                    <a href="#speaker-agustin-lahun" class="timeline__speaker-name">Agustín Lahún</a>
+                    <a href="https://www.andesmar.com/" target="_blank" rel="noopener noreferrer" class="timeline__speaker-company">Andesmar</a>
+                    <span class="timeline__speaker-sep">· Mod.</span>
+                    <a href="#speaker-ricardo-calderon" class="timeline__speaker-name">Ricardo Calderón</a>
+                  </div>
+                  <p class="timeline__desc" data-i18n="s02.agenda.item3.desc">Llegar a todo el país y cumplir la promesa.</p>
+                </div>
+              </div>
             </div>
           </li>
 
@@ -180,10 +211,23 @@
             <div class="timeline__time">15:15</div>
             <div class="timeline__dot"></div>
             <div class="timeline__card">
-              <span class="timeline__speaker">M. Picolla, P. Vidal, P. Cirino · Mod. D. Jejcic</span>
               <span class="badge badge--panel" data-i18n="agenda.cat.panel">Panel</span>
               <h3 class="timeline__title" data-i18n="s02.agenda.item4.title">Marketplaces bancarios</h3>
-              <p class="timeline__desc" data-i18n="s02.agenda.item4.desc">Expertos de tiendas bancarias comparten su visión y experiencia.</p>
+              <button type="button" class="timeline__toggle" aria-expanded="false" data-i18n="agenda.expand">Ver detalle ↓</button>
+              <div class="timeline__details">
+                <div class="timeline__details-inner">
+                  <div class="timeline__speakers">
+                    <a href="#speaker-patricio-vidal" class="timeline__speaker-name">Patricio Vidal</a>
+                    <a href="https://www.nacionservicios.com.ar/" target="_blank" rel="noopener noreferrer" class="timeline__speaker-company">Nación Servicios</a>
+                    <span class="timeline__speaker-sep">,</span>
+                    <a href="#speaker-pablo-cirino" class="timeline__speaker-name">Pablo Cirino</a>
+                    <a href="https://www.comafi.com.ar/" target="_blank" rel="noopener noreferrer" class="timeline__speaker-company">Banco Comafi</a>
+                    <span class="timeline__speaker-sep">· Mod.</span>
+                    <a href="#speaker-daniel-jejcic" class="timeline__speaker-name">Daniel Jejcic</a>
+                  </div>
+                  <p class="timeline__desc" data-i18n="s02.agenda.item4.desc">Expertos de tiendas bancarias comparten su visión y experiencia.</p>
+                </div>
+              </div>
             </div>
           </li>
 
@@ -192,10 +236,23 @@
             <div class="timeline__time">15:30</div>
             <div class="timeline__dot"></div>
             <div class="timeline__card">
-              <span class="timeline__speaker">N. Alves (Chazki), G. Mamone (Bluemail) · Mod. B. Recalde</span>
               <span class="badge badge--panel" data-i18n="agenda.cat.panel">Panel</span>
               <h3 class="timeline__title" data-i18n="s02.agenda.item5.title">Panel 2 — Same Day, Next Day: cuando la logística se convierte en parte de la decisión de compra</h3>
-              <p class="timeline__desc" data-i18n="s02.agenda.item5.desc">La velocidad también es experiencia.</p>
+              <button type="button" class="timeline__toggle" aria-expanded="false" data-i18n="agenda.expand">Ver detalle ↓</button>
+              <div class="timeline__details">
+                <div class="timeline__details-inner">
+                  <div class="timeline__speakers">
+                    <a href="#speaker-nahuel-alves" class="timeline__speaker-name">Nahuel Alves</a>
+                    <a href="https://chazki.com/" target="_blank" rel="noopener noreferrer" class="timeline__speaker-company">Chazki</a>
+                    <span class="timeline__speaker-sep">,</span>
+                    <a href="#speaker-gaston-mamone" class="timeline__speaker-name">Gastón Mamone</a>
+                    <a href="https://bluemail.com.ar/" target="_blank" rel="noopener noreferrer" class="timeline__speaker-company">Bluemail</a>
+                    <span class="timeline__speaker-sep">· Mod.</span>
+                    <a href="#speaker-belen-recalde" class="timeline__speaker-name">Belén Recalde</a>
+                  </div>
+                  <p class="timeline__desc" data-i18n="s02.agenda.item5.desc">La velocidad también es experiencia.</p>
+                </div>
+              </div>
             </div>
           </li>
 
@@ -206,7 +263,12 @@
             <div class="timeline__card">
               <span class="badge badge--networking" data-i18n="agenda.cat.networking">Networking</span>
               <h3 class="timeline__title" data-i18n="s02.agenda.item6.title">Break</h3>
-              <p class="timeline__desc" data-i18n="s02.agenda.item6.desc">Pausa.</p>
+              <button type="button" class="timeline__toggle" aria-expanded="false" data-i18n="agenda.expand">Ver detalle ↓</button>
+              <div class="timeline__details">
+                <div class="timeline__details-inner">
+                  <p class="timeline__desc" data-i18n="s02.agenda.item6.desc">Pausa.</p>
+                </div>
+              </div>
             </div>
           </li>
 
@@ -217,7 +279,12 @@
             <div class="timeline__card">
               <span class="badge badge--workshop" data-i18n="agenda.cat.workshop">Workshop</span>
               <h3 class="timeline__title" data-i18n="s02.agenda.item7.title">Semillero Digital</h3>
-              <p class="timeline__desc" data-i18n="s02.agenda.item7.desc">Una iniciativa para potenciar el ecosistema digital.</p>
+              <button type="button" class="timeline__toggle" aria-expanded="false" data-i18n="agenda.expand">Ver detalle ↓</button>
+              <div class="timeline__details">
+                <div class="timeline__details-inner">
+                  <p class="timeline__desc" data-i18n="s02.agenda.item7.desc">Una iniciativa para potenciar el ecosistema digital.</p>
+                </div>
+              </div>
             </div>
           </li>
 
@@ -226,10 +293,22 @@
             <div class="timeline__time">16:15</div>
             <div class="timeline__dot"></div>
             <div class="timeline__card">
-              <span class="timeline__speaker">M. Machado (HOP) · Mod. R. Calderón &amp; B. Recalde</span>
               <span class="badge badge--panel" data-i18n="agenda.cat.panel">Panel</span>
               <h3 class="timeline__title" data-i18n="s02.agenda.item8.title">Panel 3 — Más opciones de entrega, mejor experiencia</h3>
-              <p class="timeline__desc" data-i18n="s02.agenda.item8.desc">El cliente elige dónde recibir.</p>
+              <button type="button" class="timeline__toggle" aria-expanded="false" data-i18n="agenda.expand">Ver detalle ↓</button>
+              <div class="timeline__details">
+                <div class="timeline__details-inner">
+                  <div class="timeline__speakers">
+                    <a href="#speaker-mara-machado" class="timeline__speaker-name">Mara Machado</a>
+                    <a href="https://hopenvios.com.ar/" target="_blank" rel="noopener noreferrer" class="timeline__speaker-company">HOP</a>
+                    <span class="timeline__speaker-sep">· Mod.</span>
+                    <a href="#speaker-ricardo-calderon" class="timeline__speaker-name">Ricardo Calderón</a>
+                    <span class="timeline__speaker-sep">&amp;</span>
+                    <a href="#speaker-belen-recalde" class="timeline__speaker-name">Belén Recalde</a>
+                  </div>
+                  <p class="timeline__desc" data-i18n="s02.agenda.item8.desc">El cliente elige dónde recibir.</p>
+                </div>
+              </div>
             </div>
           </li>
 
@@ -238,10 +317,17 @@
             <div class="timeline__time">16:30</div>
             <div class="timeline__dot"></div>
             <div class="timeline__card">
-              <span class="timeline__speaker">Eliana Velarde</span>
               <span class="badge badge--workshop" data-i18n="agenda.cat.workshop">Workshop</span>
               <h3 class="timeline__title" data-i18n="s02.agenda.item9.title">Estrategia Comercial | Las tiendas bancarias se preparan para Cyber Monday</h3>
-              <p class="timeline__desc" data-i18n="s02.agenda.item9.desc">Cómo prepararte para uno de los eventos más grandes del año.</p>
+              <button type="button" class="timeline__toggle" aria-expanded="false" data-i18n="agenda.expand">Ver detalle ↓</button>
+              <div class="timeline__details">
+                <div class="timeline__details-inner">
+                  <div class="timeline__speakers">
+                    <a href="#speaker-eliana-velarde" class="timeline__speaker-name">Eliana Velarde</a>
+                  </div>
+                  <p class="timeline__desc" data-i18n="s02.agenda.item9.desc">Cómo prepararte para uno de los eventos más grandes del año.</p>
+                </div>
+              </div>
             </div>
           </li>
 
@@ -250,10 +336,22 @@
             <div class="timeline__time">16:45</div>
             <div class="timeline__dot"></div>
             <div class="timeline__card">
-              <span class="timeline__speaker">M. Celery (Envío Pack) · Mod. R. Calderón &amp; B. Recalde</span>
               <span class="badge badge--panel" data-i18n="agenda.cat.panel">Panel</span>
               <h3 class="timeline__title" data-i18n="s02.agenda.item10.title">Panel 4 — Una integración, múltiples alternativas logísticas</h3>
-              <p class="timeline__desc" data-i18n="s02.agenda.item10.desc">Escalar sin perder el control.</p>
+              <button type="button" class="timeline__toggle" aria-expanded="false" data-i18n="agenda.expand">Ver detalle ↓</button>
+              <div class="timeline__details">
+                <div class="timeline__details-inner">
+                  <div class="timeline__speakers">
+                    <a href="#speaker-martin-celery" class="timeline__speaker-name">Martín Celery</a>
+                    <a href="https://www.enviopack.com/" target="_blank" rel="noopener noreferrer" class="timeline__speaker-company">Envío Pack</a>
+                    <span class="timeline__speaker-sep">· Mod.</span>
+                    <a href="#speaker-ricardo-calderon" class="timeline__speaker-name">Ricardo Calderón</a>
+                    <span class="timeline__speaker-sep">&amp;</span>
+                    <a href="#speaker-belen-recalde" class="timeline__speaker-name">Belén Recalde</a>
+                  </div>
+                  <p class="timeline__desc" data-i18n="s02.agenda.item10.desc">Escalar sin perder el control.</p>
+                </div>
+              </div>
             </div>
           </li>
 
@@ -262,10 +360,17 @@
             <div class="timeline__time">17:00</div>
             <div class="timeline__dot"></div>
             <div class="timeline__card">
-              <span class="timeline__speaker">Daniel Jejcic</span>
               <span class="badge badge--cierre" data-i18n="agenda.cat.cierre">Cierre</span>
               <h3 class="timeline__title" data-i18n="s02.agenda.item11.title">Palabras de Cierre</h3>
-              <p class="timeline__desc" data-i18n="s02.agenda.item11.desc">Cierre oficial de The Commerce League S02.</p>
+              <button type="button" class="timeline__toggle" aria-expanded="false" data-i18n="agenda.expand">Ver detalle ↓</button>
+              <div class="timeline__details">
+                <div class="timeline__details-inner">
+                  <div class="timeline__speakers">
+                    <a href="#speaker-daniel-jejcic" class="timeline__speaker-name">Daniel Jejcic</a>
+                  </div>
+                  <p class="timeline__desc" data-i18n="s02.agenda.item11.desc">Cierre oficial de The Commerce League S02.</p>
+                </div>
+              </div>
             </div>
           </li>
 
@@ -291,7 +396,7 @@
         <div class="speakers-grid">
 
           <!-- Speaker 1: Daniel Jejcic -->
-          <div class="speaker-card speaker-card--confirmed">
+          <div class="speaker-card speaker-card--confirmed" id="speaker-daniel-jejcic">
             <a href="https://www.linkedin.com/in/danieljejcic/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Daniel Jejcic en LinkedIn"></a>
             <div class="speaker__avatar-wrap">
               <a href="https://avenidamas.com" target="_blank" rel="noopener noreferrer" class="speaker__co-badge" data-i18n="speakers.company">avenida+</a>
@@ -305,7 +410,7 @@
           </div>
 
           <!-- Speaker 2: Eliana Velarde -->
-          <div class="speaker-card speaker-card--confirmed">
+          <div class="speaker-card speaker-card--confirmed" id="speaker-eliana-velarde">
             <a href="https://www.linkedin.com/in/eliana-velarde-41b7966b/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Eliana Velarde en LinkedIn"></a>
             <div class="speaker__avatar-wrap">
               <a href="https://avenidamas.com" target="_blank" rel="noopener noreferrer" class="speaker__co-badge" data-i18n="speakers.company">avenida+</a>
@@ -319,7 +424,7 @@
           </div>
 
           <!-- Speaker 3: Ricardo Calderón -->
-          <div class="speaker-card speaker-card--confirmed">
+          <div class="speaker-card speaker-card--confirmed" id="speaker-ricardo-calderon">
             <a href="https://www.linkedin.com/in/ricardo-calder%C3%B3n2/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Ricardo Calderón en LinkedIn"></a>
             <div class="speaker__avatar-wrap">
               <a href="https://avenidamas.com" target="_blank" rel="noopener noreferrer" class="speaker__co-badge" data-i18n="speakers.company">avenida+</a>
@@ -333,7 +438,7 @@
           </div>
 
           <!-- Speaker 4: Carlos Pirán -->
-          <div class="speaker-card speaker-card--confirmed">
+          <div class="speaker-card speaker-card--confirmed" id="speaker-carlos-piran">
             <a href="https://ar.linkedin.com/in/tati-piran" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Carlos Pirán en LinkedIn"></a>
             <div class="speaker__avatar-wrap">
               <a href="https://www.southpost.com.ar/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">South Post</a>
@@ -347,7 +452,7 @@
           </div>
 
           <!-- Speaker 5: Mara Machado -->
-          <div class="speaker-card speaker-card--confirmed">
+          <div class="speaker-card speaker-card--confirmed" id="speaker-mara-machado">
             <a href="https://www.linkedin.com/in/machadomara/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Mara Machado en LinkedIn"></a>
             <div class="speaker__avatar-wrap">
               <a href="https://hopenvios.com.ar/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">HOP</a>
@@ -361,7 +466,7 @@
           </div>
 
           <!-- Speaker 6: Karina Macario -->
-          <div class="speaker-card speaker-card--confirmed">
+          <div class="speaker-card speaker-card--confirmed" id="speaker-karina-macario">
             <a href="https://www.linkedin.com/in/karina-macario-71808718/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Karina Macario en LinkedIn"></a>
             <div class="speaker__avatar-wrap">
               <a href="https://www.urbanoexpress.com/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Urbano</a>
@@ -375,7 +480,7 @@
           </div>
 
           <!-- Speaker 7: Gastón Mamone -->
-          <div class="speaker-card speaker-card--confirmed">
+          <div class="speaker-card speaker-card--confirmed" id="speaker-gaston-mamone">
             <a href="https://www.linkedin.com/in/gaston-mamone/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Gastón Mamone en LinkedIn"></a>
             <div class="speaker__avatar-wrap">
               <a href="https://bluemail.com.ar/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Bluemail</a>
@@ -389,7 +494,7 @@
           </div>
 
           <!-- Speaker 8: Débora Riquelme -->
-          <div class="speaker-card speaker-card--confirmed">
+          <div class="speaker-card speaker-card--confirmed" id="speaker-debora-riquelme">
             <a href="https://www.linkedin.com/in/debora-yanet-riquelme-42049413b/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Débora Riquelme en LinkedIn"></a>
             <div class="speaker__avatar-wrap">
               <a href="https://www.andreani.com/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Andreani</a>
@@ -403,7 +508,7 @@
           </div>
 
           <!-- Speaker 9: Nahuel Alves -->
-          <div class="speaker-card speaker-card--confirmed">
+          <div class="speaker-card speaker-card--confirmed" id="speaker-nahuel-alves">
             <a href="https://www.linkedin.com/in/nahuel-alves/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Nahuel Alves en LinkedIn"></a>
             <div class="speaker__avatar-wrap">
               <a href="https://chazki.com/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Chazki</a>
@@ -417,7 +522,7 @@
           </div>
 
           <!-- Speaker 10: Martín Celery -->
-          <div class="speaker-card speaker-card--confirmed">
+          <div class="speaker-card speaker-card--confirmed" id="speaker-martin-celery">
             <a href="https://www.linkedin.com/in/mart%C3%ADn-celery-0575a23a/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Martín Celery en LinkedIn"></a>
             <div class="speaker__avatar-wrap">
               <a href="https://www.enviopack.com/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Envío Pack</a>
@@ -431,7 +536,7 @@
           </div>
 
           <!-- Speaker 11: Agustín Lahún -->
-          <div class="speaker-card speaker-card--confirmed">
+          <div class="speaker-card speaker-card--confirmed" id="speaker-agustin-lahun">
             <a href="https://www.linkedin.com/in/agust%C3%ADn-lah%C3%BAn-715251119/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Agustín Lahún en LinkedIn"></a>
             <div class="speaker__avatar-wrap">
               <a href="https://www.andesmar.com/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Andesmar</a>
@@ -445,7 +550,7 @@
           </div>
 
           <!-- Speaker 12: Pablo Cirino -->
-          <div class="speaker-card speaker-card--confirmed">
+          <div class="speaker-card speaker-card--confirmed" id="speaker-pablo-cirino">
             <a href="https://www.linkedin.com/in/pablo-cirino-67705812/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Pablo Cirino en LinkedIn"></a>
             <div class="speaker__avatar-wrap">
               <a href="https://www.comafi.com.ar/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Banco Comafi</a>
@@ -459,7 +564,7 @@
           </div>
 
           <!-- Speaker 13: Patricio Vidal -->
-          <div class="speaker-card speaker-card--confirmed">
+          <div class="speaker-card speaker-card--confirmed" id="speaker-patricio-vidal">
             <a href="https://www.linkedin.com/in/patricio-vidal-49109b10/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Patricio Vidal en LinkedIn"></a>
             <div class="speaker__avatar-wrap">
               <a href="https://www.nacionservicios.com.ar/" target="_blank" rel="noopener noreferrer" class="speaker__co-badge">Nación Servicios</a>
@@ -472,14 +577,17 @@
             </div>
           </div>
 
-          <!-- Speaker pendiente: Banco Macro -->
-          <div class="speaker-card speaker-card--soon">
+          <!-- Speaker 15: Belén Recalde -->
+          <div class="speaker-card speaker-card--confirmed" id="speaker-belen-recalde">
+            <a href="https://www.linkedin.com/in/belen-recalde/" target="_blank" rel="noopener noreferrer" class="speaker__card-link" aria-label="Belén Recalde en LinkedIn"></a>
             <div class="speaker__avatar-wrap">
-              <div class="speaker__initials" aria-hidden="true">?</div>
+              <a href="https://avenidamas.com" target="_blank" rel="noopener noreferrer" class="speaker__co-badge" data-i18n="speakers.company">avenida+</a>
+              <img src="assets/images/foto-recalde.jpg" alt="Belén Recalde" class="speaker__photo" />
             </div>
             <div class="speaker__body">
-              <p class="speaker__name" data-i18n="s02.tbd">A confirmar</p>
-              <p class="speaker__role">Banco Macro</p>
+              <p class="speaker__name">Belén Recalde</p>
+              <p class="speaker__role">Moderadora</p>
+              <p class="speaker__company-label" data-i18n="speakers.company">avenida+</p>
             </div>
           </div>
 
@@ -544,6 +652,12 @@
           <a href="https://avenidamas.com/" target="_blank" rel="noopener noreferrer" class="sponsor-main__link" aria-label="avenida+">
             <img src="assets/logos/logo-avenida.png" alt="avenida+" class="sponsor-main__logo" />
           </a>
+          <!-- Decorative truck traveling along the divider line, opposite
+               the sponsor ticker's scroll direction. CSS-only, no JS. -->
+          <div class="sponsors__truck-lane" aria-hidden="true">
+            <span class="sponsors__truck">🚛</span>
+            <span class="sponsors__truck-flag">🏁</span>
+          </div>
         </div>
 
         <!-- Nivel 3: Ticker infinito — Workplace, Hop, Pickit, Southpost, Chazki, Cabify, Andreani, Andesmar, Urbano, Envío Pack, Zipnova -->

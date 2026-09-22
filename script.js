@@ -58,6 +58,8 @@ const i18n = {
     'agenda.cat.panel':      'Panel',
     'agenda.cat.workshop':   'Workshop',
     'agenda.cat.cierre':     'Cierre',
+    'agenda.expand':         'Ver detalle ↓',
+    'agenda.collapse':       'Cerrar ↑',
     'agenda.item1.title':    'Desayuno & Networking',
     'agenda.item1.desc':     'Bienvenida y los primeros cruces entre comercios.',
     'agenda.item2.title':    'Apertura: Palabras de bienvenida',
@@ -158,7 +160,7 @@ const i18n = {
     's02.reg.eyebrow':         'Temporada 02',
     's02.reg.b2':              'Coffee break y cocktail de cierre incluidos',
     's02.reg.b3':              'Materiales exclusivos de Liga S02',
-    's02.speakers.badge1':     '13 speakers confirmados',
+    's02.speakers.badge1':     '14 speakers confirmados',
     's02.tbd':                 'A confirmar',
     's02.agenda.item1.title':  'Café | Networking',
     's02.agenda.item1.desc':   'Bienvenida y los primeros cruces entre asistentes.',
@@ -238,6 +240,8 @@ const i18n = {
     'agenda.cat.panel':      'Panel',
     'agenda.cat.workshop':   'Workshop',
     'agenda.cat.cierre':     'Closing',
+    'agenda.expand':         'See details ↓',
+    'agenda.collapse':       'Close ↑',
     'agenda.item1.title':    'Breakfast & Networking',
     'agenda.item1.desc':     'Welcome and the first connections among merchants.',
     'agenda.item2.title':    'Opening Remarks',
@@ -338,7 +342,7 @@ const i18n = {
     's02.reg.eyebrow':         'Season 02',
     's02.reg.b2':              'Coffee break and closing cocktail included',
     's02.reg.b3':              'Exclusive Liga S02 materials',
-    's02.speakers.badge1':     '13 speakers confirmed',
+    's02.speakers.badge1':     '14 speakers confirmed',
     's02.tbd':                 'TBA',
     's02.agenda.item1.title':  'Coffee | Networking',
     's02.agenda.item1.desc':   'Welcome and the first connections among attendees.',
@@ -433,6 +437,34 @@ function initTicker() {
   const clone = track.cloneNode(true);
   clone.setAttribute('aria-hidden', 'true');
   track.parentElement.appendChild(clone);
+}
+
+// ============================================================
+// Agenda accordion — expand/collapse timeline items (S02 only;
+// s01.html's agenda has no .timeline__toggle buttons, so this is a
+// no-op there).
+// ============================================================
+function initAgendaAccordion() {
+  const toggles = $$('.timeline__toggle');
+  if (!toggles.length) return;
+
+  function t(key) { return i18n[currentLang][key] || key; }
+
+  function setState(btn, isOpen) {
+    const details = btn.closest('.timeline__card').querySelector('.timeline__details');
+    details.style.maxHeight = isOpen ? `${details.scrollHeight}px` : null;
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.dataset.i18n = isOpen ? 'agenda.collapse' : 'agenda.expand';
+    btn.textContent = t(btn.dataset.i18n);
+  }
+
+  toggles.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const opening = btn.getAttribute('aria-expanded') !== 'true';
+      toggles.forEach((other) => { if (other !== btn) setState(other, false); });
+      setState(btn, opening);
+    });
+  });
 }
 
 // ============================================================
@@ -837,7 +869,15 @@ function initHeroParticles() {
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
-  const COLORS = ['#FF6B35', '#FF8C00', '#FFF0E0'];
+  // Warm (orange) dominates at ~70%; the logo's cyan/violet accent
+  // shows up in the remaining ~30% via pickParticleColor() below.
+  const COLORS_WARM = ['#FF6B35', '#FF8C00', '#FFF0E0'];
+  const COLORS_ACCENT = ['#4FC3F7', '#7B5EA7'];
+
+  function pickParticleColor() {
+    const palette = Math.random() < 0.3 ? COLORS_ACCENT : COLORS_WARM;
+    return palette[Math.floor(Math.random() * palette.length)];
+  }
   const PARTICLE_COUNT = 90;
   const reduceMotion = window.matchMedia &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -889,7 +929,7 @@ function initHeroParticles() {
         r: randomBetween(1, 3),
         vx: Math.cos(angle) * speed,
         vy: Math.sin(angle) * speed,
-        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+        color: pickParticleColor(),
         baseOpacity,
         opacity: baseOpacity,
         isPulsing: Math.random() < 0.25, // ~20-30% of particles
@@ -1372,6 +1412,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initLangToggle();
   initTicker();
+  initAgendaAccordion();
   initScrollSpy();
   initFadeUp();
   initChatbot();

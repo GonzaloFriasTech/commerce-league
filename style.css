@@ -304,14 +304,19 @@ a:hover { opacity: 0.75; }
    ============================================================ */
 .hero {
   position: relative;
-  z-index: 1;
+  /* No z-index here on purpose: .hero must NOT be an atomic stacking
+     wrapper, or its whole subtree (logo included) would sit above
+     #hero-particles as one block. Leaving z-index unset lets the
+     unpositioned .hero__logo-band paint below the canvas while
+     .hero__above-particles elements (their own z-index:2) still
+     paint above it — see .hero__particles below. */
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   overflow: hidden;
-  /* No opaque background: the fixed #hero-particles canvas (z-index:0)
-     needs to show through. body already provides the base #000001. */
+  /* No opaque background: the fixed #hero-particles canvas needs to
+     show through. body already provides the base #000001. */
   padding-top: var(--nav-height);
 }
 
@@ -326,17 +331,24 @@ a:hover { opacity: 0.75; }
    All of this is still well below the fixed navbar (z-index:200).
    ============================================================ */
 .hero__particles {
-  /* Fixed, full-viewport background layer — sits behind every section
-     on the page (header, hero, agenda, speakers, sponsors, registro,
-     footer), not just the hero. Every section below is bumped to
-     z-index:1+ (position:relative) so it paints above this layer;
-     the fixed header/chatbot/tour/modal already sit much higher. */
+  /* Fixed, full-viewport background layer — sits behind every OTHER
+     section on the page (agenda, speakers, sponsors, registro,
+     footer are bumped to z-index:1+ with position:relative so they
+     paint above this layer). Inside the hero specifically, this is
+     z-index:1 so it slots in ABOVE the unpositioned .hero__logo-band
+     (which has no stacking context of its own) but BELOW everything
+     tagged .hero__above-particles (z-index:2) — see .hero and
+     .hero__content above, which deliberately do NOT wrap their
+     children in their own z-index, so this comparison applies
+     directly instead of the whole hero subtree being one atomic
+     block above or below this canvas.
+     The fixed header/chatbot/tour/modal already sit much higher. */
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -393,6 +405,13 @@ a:hover { opacity: 0.75; }
   font-weight: 400;
 }
 
+/* S02 only — cyan separators instead of orange (index.html adds this
+   modifier class alongside .ticker__sep; s01.html's ✦-less markup
+   never uses it, so its ticker stays orange). */
+.ticker__sep.ticker__sep--accent {
+  color: #4FC3F7 !important;
+}
+
 @keyframes ticker {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -408,7 +427,10 @@ a:hover { opacity: 0.75; }
   text-align: center;
   padding-block: var(--space-2xl);
   position: relative;
-  z-index: 1;
+  /* No z-index here either — same reasoning as .hero above: keeping
+     this z-index:auto lets .hero__logo-band (unpositioned) paint
+     below #hero-particles while .hero__above-particles siblings
+     (explicit z-index:2) still paint above it. */
   gap: var(--space-xl);
 }
 
@@ -434,6 +456,13 @@ a:hover { opacity: 0.75; }
   background: var(--color-pink);
   flex-shrink: 0;
   animation: blink 2s ease-in-out infinite;
+}
+
+/* S02 only — cyan dot instead of orange on the hero eyebrow badge
+   (index.html adds this modifier class; s01.html's eyebrow dot
+   never uses it, so it stays orange). */
+.eyebrow__dot--accent {
+  background: #4FC3F7;
 }
 
 @keyframes blink {
@@ -591,24 +620,32 @@ a:hover { opacity: 0.75; }
   display: flex;
   flex-direction: column;
   position: relative;   /* contains .speaker__card-link (position:absolute;inset:0) */
-  border: 1px solid var(--color-border-2);
+  /* Solid cyan accent border — logo accent, no orange. */
+  border: 1px solid rgba(79, 195, 247, 0.4);
   border-radius: 14px;
   background: #0d0d1a;
   overflow: hidden;
   text-decoration: none;
   color: inherit;
   transition: border-color var(--t-base), box-shadow var(--t-base), transform var(--t-fast);
+  /* Keeps the card clear of the fixed navbar when jumped to via an
+     agenda speaker link (#speaker-xxx) or the tour highlight. */
+  scroll-margin-top: calc(var(--nav-height) + 20px);
 }
 
 .speaker-card--confirmed:hover {
-  border-color: rgba(255, 107, 53, 0.5);
-  box-shadow: 0 0 28px rgba(255, 107, 53, 0.18),
-              0 0 70px rgba(255, 69, 0, 0.1);
+  border-color: rgba(79, 195, 247, 0.7);
+  box-shadow: 0 0 28px rgba(79, 195, 247, 0.22),
+              0 0 46px rgba(79, 195, 247, 0.14);
   transform: translateY(-4px);
 }
 
 .speaker-card--soon {
-  border-style: dashed;
+  /* Pending placeholders keep the old plain dashed look — no
+     orange/cyan gradient border, so they stay visually distinct from
+     confirmed speakers. */
+  border: 1px dashed var(--color-border-2);
+  background: #0d0d1a;
   opacity: 0.4;
   cursor: default;
 }
@@ -790,6 +827,72 @@ a:hover { opacity: 0.75; }
   margin-bottom: 3rem;
   padding-bottom: 3rem;
   border-bottom: 1px solid var(--color-border);
+  position: relative; /* anchors .sponsors__truck-lane on the divider below */
+}
+
+/* Decorative truck (S02 only — index.html adds the markup, s01.html
+   doesn't) traveling left-to-right along the divider between the
+   avenida+ logo and the sponsor ticker, opposite the ticker's own
+   right-to-left scroll. Pure CSS, no JS; purely decorative so it
+   can't affect layout or be tabbed/clicked into. */
+.sponsors__truck-lane {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px; /* 12px up from the old -10px, so it sits just above the divider line instead of on top of it */
+  height: 20px;
+  pointer-events: none;
+}
+
+.sponsors__truck,
+.sponsors__truck-flag {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 19px;
+  line-height: 1;
+  opacity: 0;
+}
+
+.sponsors__truck {
+  left: 0;
+  /* The 🚛 glyph faces left by default — flip it so it faces the
+     direction it actually travels (left to right). */
+  transform: translateY(-50%) scaleX(-1);
+  animation: sponsorsTruckMove 22s linear infinite;
+}
+
+.sponsors__truck-flag {
+  left: calc(100% - 20px);
+  animation: sponsorsTruckFlag 22s linear infinite;
+}
+
+/* Travels the lane in ~78% of the cycle (~17s of 22s — well within
+   the 20-25s/cycle range), then fades out on arrival; opacity:0 at
+   0% and 100% are the same state, so it "reappears" instantly at the
+   left edge when the loop restarts. */
+@keyframes sponsorsTruckMove {
+  0%   { left: 0; opacity: 1; }
+  78%  { left: calc(100% - 20px); opacity: 1; }
+  80%  { left: calc(100% - 20px); opacity: 0; }
+  100% { left: calc(100% - 20px); opacity: 0; }
+}
+
+/* Flashes the checkered flag for ~0.5s right as the truck arrives,
+   then hides until the truck's next lap. */
+@keyframes sponsorsTruckFlag {
+  0%, 79%   { opacity: 0; }
+  80%       { opacity: 1; }
+  82.3%     { opacity: 1; }
+  83%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sponsors__truck,
+  .sponsors__truck-flag {
+    animation: none;
+    opacity: 0;
+  }
 }
 
 .sponsor-main__link {
@@ -1119,11 +1222,10 @@ a.sponsor-item:hover {
   transition: border-color var(--t-base);
 }
 
-/* Speaker chip — top-right corner */
+/* Speaker chip — s01.html's plain (non-accordion) agenda only; S02
+   uses .timeline__speakers below instead. */
 .timeline__speaker {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.85rem;
+  display: inline-block;
   font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -1133,8 +1235,62 @@ a.sponsor-item:hover {
   border: 1px solid rgba(255, 107, 53, 0.28);
   border-radius: 8px;
   padding: 3px 8px;
-  max-width: 220px;
-  text-align: right;
+  margin-bottom: 0.6rem;
+}
+
+/* Speaker names + company tags inside the S02 agenda accordion —
+   each name links to its card in #speakers (scroll-margin-top set on
+   .speaker-card), each company tag opens that company's site. */
+.timeline__speakers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 0.4rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.68rem;
+}
+
+.timeline__speaker-name {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.35);
+  transition: color var(--t-fast), border-color var(--t-fast);
+}
+.timeline__speaker-name:hover {
+  color: #FF6B35;
+  border-color: #FF6B35;
+}
+
+.timeline__speaker-company {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #FF6B35;
+  background: rgba(255, 107, 53, 0.08);
+  border: 1px solid rgba(255, 107, 53, 0.28);
+  border-radius: 8px;
+  padding: 1px 7px;
+  text-decoration: none;
+  transition: background var(--t-fast), opacity var(--t-fast);
+}
+.timeline__speaker-company:hover {
+  background: rgba(255, 107, 53, 0.18);
+  opacity: 1;
+}
+
+.timeline__speaker-mod,
+.timeline__speaker-sep {
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 600;
+}
+
+/* Names with no matching speaker card yet (nothing to link to) —
+   same look as .timeline__speaker-name, just not clickable. */
+.timeline__speaker-name-plain {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
 }
 
 .timeline__card:hover {
@@ -1161,7 +1317,35 @@ a.sponsor-item:hover {
   font-size: 0.83rem;
   color: var(--color-text-muted);
   line-height: 1.7;
-  margin-top: 0.4rem;
+}
+
+/* Expand/collapse toggle (S02 agenda accordion) */
+.timeline__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-top: 0.55rem;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #FF6B35;
+  cursor: pointer;
+  transition: opacity var(--t-fast);
+}
+.timeline__toggle:hover {
+  opacity: 0.75;
+}
+
+.timeline__details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--t-base);
+}
+
+.timeline__details-inner {
+  padding-top: 0.7rem;
 }
 
 /* Badges */
@@ -2011,4 +2195,74 @@ a.sponsor-item:hover {
   text-transform: uppercase;
   color: #FF6B35;
   margin-bottom: 0.15rem;
+}
+
+/* ============================================================
+   S01 legacy look — s01.html ONLY, scoped via body.has-s01-banner
+   (the class already added for the Temporada 02 banner offset, and
+   unique to s01.html). Reverts the S02-era hero ticker redesign,
+   hides the global particle canvas, and restores the original
+   opaque section backgrounds, so s01.html keeps reading as the
+   original Temporada 01 page. The only intentional additions on
+   s01.html are the top banner and the S02 announcement popup —
+   everything else here just undoes S02-only styling that leaked in
+   through the shared stylesheet.
+   ============================================================ */
+body.has-s01-banner #hero-particles {
+  display: none;
+}
+
+body.has-s01-banner .hero__ticker {
+  background: #000001;
+  border-top: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+body.has-s01-banner .ticker__track {
+  animation-duration: 40s;
+}
+
+body.has-s01-banner .ticker__track span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+body.has-s01-banner .ticker__sep {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 0.6rem !important;
+  font-weight: 400;
+}
+
+body.has-s01-banner .hero,
+body.has-s01-banner .agenda,
+body.has-s01-banner .speakers,
+body.has-s01-banner .sponsors,
+body.has-s01-banner .registro {
+  background: #000001;
+}
+
+body.has-s01-banner .site-footer {
+  background-color: var(--color-surface);
+}
+
+/* s01.html's agenda is a plain (non-accordion) timeline — restore the
+   original top-right corner speaker chip and the spacing that used to
+   come from .timeline__desc's own margin-top, both since repurposed
+   for the S02 expand/collapse accordion (see .timeline__details-inner). */
+body.has-s01-banner .timeline__speaker {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.85rem;
+  max-width: 220px;
+  text-align: right;
+  margin-bottom: 0;
+}
+
+body.has-s01-banner .timeline__desc {
+  margin-top: 0.4rem;
 }
