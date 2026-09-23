@@ -817,8 +817,8 @@ a:hover { opacity: 0.75; }
 
 /* Keyframe dedicado: 6 sets → mueve 2 sets (-33.33%) para loop sin cortes */
 @keyframes sponsors-loop {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-33.3334%); }
+  from { transform: translateX(0); -webkit-transform: translateX(0); }
+  to   { transform: translateX(-33.3334%); -webkit-transform: translateX(-33.3334%); }
 }
 
 /* ── Main sponsor ── */
@@ -977,6 +977,18 @@ a:hover { opacity: 0.75; }
     black 88%,
     transparent 100%
   );
+  /* iOS Safari fix: an element with mask-image sitting near other
+     animated/fixed layers (the global particle canvas, the hero map)
+     can have its compositing tile dropped and redrawn mid-scroll,
+     which reads as the masked content blinking out and back in. Only
+     reproduces on real WebKit hardware compositing, never in a
+     desktop inspector's mobile emulation. Promoting this element to
+     its own stable GPU layer (translateZ + backface-visibility)
+     stops WebKit from discarding/recompositing it on scroll. */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .sponsors__track {
@@ -986,6 +998,10 @@ a:hover { opacity: 0.75; }
   animation: ticker 28s linear infinite;
   will-change: transform;
   padding-block: 0.5rem;
+  /* Same GPU-layer stabilization as the mask container above, on the
+     actual animated element. */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* Variante de loop con 6 sets (-33.33%) */
@@ -994,8 +1010,14 @@ a:hover { opacity: 0.75; }
   animation-duration: 22s;
 }
 
-.sponsors__ticker:hover .sponsors__track {
-  animation-play-state: paused;
+/* Only pause-on-hover for pointer devices that actually have hover
+   (mouse/trackpad). Without this gate, iOS Safari's "sticky hover"
+   after a tap/scroll touch can leave the ticker paused until the
+   user taps elsewhere — easy to misread as the carousel "vanishing". */
+@media (hover: hover) and (pointer: fine) {
+  .sponsors__ticker:hover .sponsors__track {
+    animation-play-state: paused;
+  }
 }
 
 /* Individual sponsor item */
