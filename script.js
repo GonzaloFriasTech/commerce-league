@@ -157,11 +157,15 @@ const i18n = {
 
     // Season 02 full page (index.html) — content unique to the S02 landing
     's02.hero.eyebrow':        'avenida+ presenta · Temporada 02',
+    's02.hero.subtitle':       'Donde la logística, el ecommerce y los marketplaces bancarios se encuentran para construir el futuro del comercio en Argentina.',
     's02.reg.eyebrow':         'Temporada 02',
-    's02.reg.b2':              'Coffee break y cocktail de cierre incluidos',
-    's02.reg.b3':              'Materiales exclusivos de Liga S02',
+    's02.reg.b1':              '4 horas de contenido sobre logística y ecommerce',
+    's02.reg.b2':              '4 paneles con expertos de logística real',
+    's02.reg.b3':              'Casos reales: Same Day, Next Day y más',
+    's02.reg.b4':              'Estrategia comercial para Cyber Monday',
+    's02.reg.b5':              'Meet & greet con el equipo avenida+',
     's02.speakers.badge1':     '14 speakers confirmados',
-    's02.tbd':                 'A confirmar',
+    's02.tbd':                 'Speaker Sorpresa',
     's02.agenda.item1.title':  'Café | Networking',
     's02.agenda.item1.desc':   'Bienvenida y los primeros cruces entre asistentes.',
     's02.agenda.item2.title':  'Apertura | Palabras de bienvenida',
@@ -339,11 +343,15 @@ const i18n = {
 
     // Season 02 full page (index.html) — content unique to the S02 landing
     's02.hero.eyebrow':        'avenida+ presents · Season 02',
+    's02.hero.subtitle':       'Where logistics, ecommerce and banking marketplaces come together to build the future of commerce in Argentina.',
     's02.reg.eyebrow':         'Season 02',
-    's02.reg.b2':              'Coffee break and closing cocktail included',
-    's02.reg.b3':              'Exclusive Liga S02 materials',
+    's02.reg.b1':              '4 hours of content on logistics and ecommerce',
+    's02.reg.b2':              '4 panels with real logistics experts',
+    's02.reg.b3':              'Real cases: Same Day, Next Day and more',
+    's02.reg.b4':              'Commercial strategy for Cyber Monday',
+    's02.reg.b5':              'Meet & greet with the avenida+ team',
     's02.speakers.badge1':     '14 speakers confirmed',
-    's02.tbd':                 'TBA',
+    's02.tbd':                 'Mystery Speaker',
     's02.agenda.item1.title':  'Coffee | Networking',
     's02.agenda.item1.desc':   'Welcome and the first connections among attendees.',
     's02.agenda.item2.title':  'Opening | Welcome Remarks',
@@ -465,6 +473,46 @@ function initAgendaAccordion() {
       setState(btn, opening);
     });
   });
+}
+
+// ============================================================
+// Timeline dot sequence — S02 agenda "event progress" animation.
+// Dots start off; one at a time lights up solid orange with a
+// glow/pulse, blinks a few times, then hands off to the next dot.
+// Loops forever. Guard clause makes this a no-op on s01.html,
+// which never has .timeline__dot--anim elements.
+// ============================================================
+function initTimelineDotSequence() {
+  const dots = $$('.timeline__dot--anim');
+  if (!dots.length) return;
+
+  const INITIAL_DELAY = 1000;  // ms before the first dot lights up
+  const ON_DURATION = 3000;    // ms solid glow before blinking starts
+  const BLINK_DURATION = 300;  // ms per blink cycle (fade out + in)
+  const BLINK_COUNT = 4;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    dots[0].classList.add('is-on');
+    return;
+  }
+
+  function activate(index) {
+    dots[index].classList.add('is-on');
+    setTimeout(() => startBlink(index), ON_DURATION);
+  }
+
+  function startBlink(index) {
+    dots[index].classList.remove('is-on');
+    dots[index].classList.add('is-blinking');
+    setTimeout(() => deactivate(index), BLINK_DURATION * BLINK_COUNT);
+  }
+
+  function deactivate(index) {
+    dots[index].classList.remove('is-blinking');
+    activate((index + 1) % dots.length);
+  }
+
+  setTimeout(() => activate(0), INITIAL_DELAY);
 }
 
 // ============================================================
@@ -1413,6 +1461,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLangToggle();
   initTicker();
   initAgendaAccordion();
+  initTimelineDotSequence();
   initScrollSpy();
   initFadeUp();
   initChatbot();

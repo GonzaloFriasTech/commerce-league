@@ -696,17 +696,19 @@ a:hover { opacity: 0.75; }
   display: block;
 }
 
-/* Initials / placeholder */
+/* Initials / placeholder — dark cyan to match the "pending" cyan
+   accent (#4FC3F7), only ever used by the "Speaker Sorpresa"
+   .speaker-card--soon placeholders in index.html (S02). */
 .speaker__initials {
   width: 100%;
   height: 100%;
-  background: var(--grad-primary);
+  background: #1a3a4a;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 4rem;
   font-weight: 900;
-  color: rgba(255, 255, 255, 0.2);
+  color: #4FC3F7;
   line-height: 1;
 }
 
@@ -1210,6 +1212,47 @@ a.sponsor-item:hover {
 .timeline__dot--grad {
   background: var(--grad-primary);
   border-color: transparent;
+}
+
+/* S02-only: sequential "event progress" dot animation, driven by
+   initTimelineDotSequence() in script.js. Starts "off" (subtle gray
+   ring) — s01.html never gets this class, so its dots keep the
+   original static orange-tinted ring untouched. */
+.timeline__dot--anim {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: #000001;
+  transition: border-color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
+}
+
+.timeline__dot--anim.is-on {
+  border-color: #FF6B35;
+  background: #FF6B35;
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.18), 0 0 16px rgba(255, 107, 53, 0.65);
+  animation: timelineDotPulse 1.6s ease-in-out infinite;
+}
+
+.timeline__dot--anim.is-blinking {
+  border-color: #FF6B35;
+  background: #FF6B35;
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.18), 0 0 16px rgba(255, 107, 53, 0.65);
+  animation: timelineDotBlink 0.3s ease-in-out infinite;
+}
+
+@keyframes timelineDotPulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.18), 0 0 16px rgba(255, 107, 53, 0.65); }
+  50%      { box-shadow: 0 0 0 7px rgba(255, 107, 53, 0.1), 0 0 22px rgba(255, 107, 53, 0.85); }
+}
+
+@keyframes timelineDotBlink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.15; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline__dot--anim.is-on,
+  .timeline__dot--anim.is-blinking {
+    animation: none;
+  }
 }
 
 /* Card */
